@@ -11,7 +11,7 @@ const MainRouter = () => {
       <Route path='/register' element={<RegisterPage />} />
       <Route path='/login' element={<LoginPage />} />
       <Route path='/following' element={<FollowingPage />} />
-      <Route path='/recommendations' element={<RecsPage />} />
+      <Route path='/' element={<RecsPage />} />
 
     </Routes>
   )

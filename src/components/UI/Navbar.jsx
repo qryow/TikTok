@@ -21,7 +21,7 @@ const Navbar = () => {
             <NavLink className={style.nav__title} to="/following">
               Following
             </NavLink>
-            <NavLink className={style.nav__title} to="/recommendations">
+            <NavLink className={style.nav__title} to="/">
               For You
             </NavLink>
           </div>

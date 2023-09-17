@@ -1,8 +1,12 @@
 import React from 'react'
+import Navbar from '../../components/UI/Navbar'
 
 const FollowingPage = () => {
   return (
-    <div>FollowingPage</div>
+    <>
+      <Navbar />
+      <div>FollowingPage</div>
+    </>
   )
 }
 

@@ -1,33 +1,47 @@
 import React from 'react'
-import style from '../../styles/index.module.css';
-import logo from '../../img/tiktokLogo.svg';
-import { useNavigate } from 'react-router-dom';
+import style from './AccountStyles/AccountStyles.module.css';
+import { NavLink, useNavigate } from 'react-router-dom';
+
+import logo from '../../img/LogoLight.svg'
 
 const AccountLogin = () => {
   const navigate = useNavigate();
 
   return (
-    <div className={style.form}>
-    <div className={style.registerTop}>
-      <img src={logo} alt="TikTok" />
-      <h2>Register</h2>
-    </div>
-    <hr />
-  <div className={style.info_form}>
-    <div className={style.singBtns}>
-      <button className={style.singUp}>Sing up</button>
-      <button onClick={() => navigate('/login')}>Sing in</button>
-    </div>
+    <>
+      <div className={style.navbar}>
+        <div className={style.container}>
+          <div className={style.nav__wrapper}>
 
-    <input type="email" src='' placeholder="Email" />
+            <div className={style.logo__wrapper}>
+              <img className={style.logo} src={logo} alt="" />
+            </div>
 
-    <input type="password" minLength="6" placeholder="Password" />
+            <h3 className={style.nav__name}>Login</h3>
 
-    <input type="password" minLength="6"  placeholder="Password confirm" />
+          </div>
+        </div>
+      </div>
 
-    <button className={style.registerBtn}>Register</button>
-  </div>
-</div>
+      <div className={style.inputs}>
+        <div className={style.navigation}>
+          <NavLink className={style.nav__title} to="/register">
+            Sign Up
+          </NavLink>
+          <NavLink className={style.nav__title} to="/login">
+            Sign In
+          </NavLink>
+        </div>
+
+        <div className={style.inputs__wrapper}>
+          <input className={style.input} type="email" src='' placeholder="Email@gmail.com" />
+          <input className={style.input} type="password" minLength="6" placeholder="Password" />
+
+          <button className={style.btn} onClick={() => navigate('/')}>Login</button>
+        </div>
+
+      </div>
+    </>
   )
 }
 

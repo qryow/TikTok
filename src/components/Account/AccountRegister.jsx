@@ -1,33 +1,48 @@
 import React from 'react';
-import style from '../../styles/index.module.css';
-import logo from '../../img/tiktokLogo.svg';
-import { useNavigate } from 'react-router-dom';
+import style from './AccountStyles/AccountStyles.module.css';
+import { NavLink, useNavigate } from 'react-router-dom';
+
+import logo from '../../img/LogoLight.svg'
 
 const AccountRegister = () => {
   const navigate = useNavigate();
 
   return (
-    <div className={style.form}>
-        <div className={style.registerTop}>
-          <img src={logo} alt="TikTok" />
-          <h2>Register</h2>
+    <>
+      <div className={style.navbar}>
+        <div className={style.container}>
+          <div className={style.nav__wrapper}>
+
+            <div className={style.logo__wrapper}>
+              <img className={style.logo} src={logo} alt="" />
+            </div>
+
+            <h3 className={style.nav__name}>Register</h3>
+
+          </div>
         </div>
-        <hr />
-      <div className={style.info_form}>
-        <div className={style.singBtns}>
-          <button className={style.singUp}>Sing up</button>
-          <button onClick={() => navigate('/login')}>Sing in</button>
-        </div>
-
-        <input type="email" src='' placeholder="Email" />
-
-        <input type="password" minLength="6" placeholder="Password" />
-
-        <input type="password" minLength="6"  placeholder="Password confirm" />
-
-        <button className={style.registerBtn}>Register</button>
       </div>
-    </div>
+
+      <div className={style.inputs}>
+        <div className={style.navigation}>
+          <NavLink className={style.nav__title} to="/register">
+            Sign Up
+          </NavLink>
+          <NavLink className={style.nav__title} to="/login">
+            Sign In
+          </NavLink>
+        </div>
+
+        <div className={style.inputs__wrapper}>
+          <input className={style.input} type="email" src='' placeholder="Email@gmail.com" />
+          <input className={style.input} type="password" minLength="6" placeholder="Password" />
+          <input className={style.input} type="password" minLength="6"  placeholder="Password confirm" />
+
+          <button className={style.btn} onClick={() => navigate('/login')}>Register</button>
+        </div>
+
+      </div>
+    </>
     );
 };
 
