@@ -85,3 +85,66 @@
 .btn:hover {
   background-color: #df0000
 }
+
+
+
+
+
+/* !Adaptive */
+
+@media (max-width: 1000px) {
+  .logo__wrapper {
+      width: 20%;
+    }
+
+  .nav__name{
+    font-size: 40px;
+  }
+
+  .nav__title{
+    font-size: 25px;
+  }
+
+  .input {
+    height: 50px;
+    font-size: 20px;
+  }
+
+  .btn{
+    height: 50px;
+  }
+}
+
+
+@media (max-width: 600px){
+  .logo__wrapper {
+    width: 150px;
+  }
+
+  .nav__name{
+    font-size: 30px;
+  }
+}
+
+
+@media (max-width: 420px){
+  .navigation{
+    width: 250px;
+  }
+  
+  .nav__title{
+    font-size: 20px;
+  }
+
+  .input {
+    height: 40px;
+    font-size: 20px;
+    padding-left: 10px;
+  }
+
+  .btn{
+    height: 40px;
+    font-size: 25px;
+  }
+
+}
