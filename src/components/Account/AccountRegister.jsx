@@ -1,14 +1,13 @@
 import React from 'react';
 import style from './AccountStyles/AccountStyles.module.css';
 import { NavLink, useNavigate } from 'react-router-dom';
-
 import logo from '../../img/LogoLight.svg'
 
 const AccountRegister = () => {
   const navigate = useNavigate();
 
   return (
-    <>
+    <div>
       <div className={style.navbar}>
         <div className={style.container}>
           <div className={style.nav__wrapper}>
@@ -42,7 +41,7 @@ const AccountRegister = () => {
         </div>
 
       </div>
-    </>
+    </div>
     );
 };
 
