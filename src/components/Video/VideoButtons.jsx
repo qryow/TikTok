@@ -10,8 +10,8 @@ import repost from '../../img/Repost.svg'
 import share from '../../img/Share.svg'
 
 const VideoButtons = () => {
-  const [liked, setLiked] = useState(true);
-  const [favorited, setFavorite] = useState(true);
+  const [liked, setLiked] = useState(false);
+  const [favorited, setFavorite] = useState(false);
 
   const handleLikeClick = () => {
     setLiked(!liked);
@@ -23,14 +23,14 @@ const VideoButtons = () => {
   return (
     <div className={style.btns__wrapper}>
       <div className={style.btn__wrapper}>
-      <img className={style.like} onClick={handleLikeClick} src={liked ? like : likeRed} alt="like" />
+      <img className={style.like} onClick={handleLikeClick} src={liked ? likeRed : like} alt="like" />
         {/*<img className={style.like} src={like} alt="comment" />*/}
       </div>
       <div className={style.btn__wrapper}>
         <img className={style.comment} src={comment} alt="comment" />
       </div>
       <div className={style.btn__wrapper}>
-        <img className={style.favorite} onClick={handleFavoriteClick} src={favorited ? favorite : favoriteYellow} alt="repost" />
+        <img className={style.favorite} onClick={handleFavoriteClick} src={favorited ? favoriteYellow : favorite} alt="repost" />
       </div>
       <div className={style.btn__wrapper}>
         <img className={style.repost} src={repost} alt="repost" />
