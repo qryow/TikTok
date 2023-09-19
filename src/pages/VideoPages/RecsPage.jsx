@@ -15,6 +15,16 @@ const RecsPage = () => {
           <Video />
           <VideoButtons />
         </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <VideoInfo />
+        <div className={style.content}>
+          <Video />
+          <VideoButtons />
+        </div>
       </div>
     </>
   )
