@@ -31,9 +31,9 @@ const Navbar = () => {
               <img className={style.search} src={search} alt="search" />
             </div>
 
-            <div className={style.add_video__wrapper}>
+            <NavLink className={style.add_video__wrapper} to="/createVideo">
               <img className={style.add_video} src={add} alt="add video" />
-            </div>
+            </NavLink>
 
             <div className={style.profile__wrapper}>
               <img className={style.profile__logo} src={profile} alt="profile" />
