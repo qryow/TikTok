@@ -1,3 +1,20 @@
+@font-face {
+  font-family: "Proxima-Nova_bold";
+  src: url("../../../fonts/ProximaNova/proximanova_bold.otf") format("truetype");
+  font-style: normal;
+}
+@font-face {
+  font-family: "Proxima-Nova_regular";
+  src: url("../../../fonts/ProximaNova/proximanova_regular.ttf") format("truetype");
+  font-style: normal;
+}
+
+
+.content {
+  display: flex;
+}
+
+
 .video__item {
   width: 100%;
   /*margin-right: 20px;*/
@@ -7,22 +24,21 @@
   justify-content: center;
 }
 .video__wrapper {
-  width: 380px;
+  width: 364px;
   margin-right: 45px;
-  height: 710px;
+  height: 649px;
 }
 .video {
   width: 100%;
   height: 100%;
-  margin: 100px 0 0;
+  border-radius: 5px;
+  margin: 0 0 0;
 }
 .play {
   position: absolute;
   left: 48%;
   top: 60%;
 }
-
-
 
 .navigation{
   position: relative;
@@ -43,4 +59,94 @@
           border-radius: 30px;
       }
   }
+}
+
+
+/*! INFO */
+
+.info__wrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info__block {
+  width: 28%;
+  margin-right: 90px;
+  display: flex;
+}
+
+.info__logo {
+  width: 16%;
+}
+.logo {
+  width: 100%;
+}
+.subscribe {
+  position: relative;
+  bottom: 20px;
+  left: 29%;
+}
+
+.info__text {
+  margin: 5px 0 0 20px
+}
+.acc__name {
+  font-family: "Proxima-Nova_bold";
+  font-size: 25px;
+  margin-bottom: 5px;
+}
+.video__subtitle {
+  font-family: "Proxima-Nova_regular";
+  margin-bottom: 3px;
+  font-size: 20px;
+}
+
+.hashtags {
+  width: 90%;
+}
+.hashtag {
+  font-family: "Proxima-Nova_bold";
+  font-size: 20px;
+  color: #0071F6;
+  text-decoration: none;
+}
+
+.btns__wrapper {
+  position: absolute;
+  width: 3%;
+  left: 60%;
+  top: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn__wrapper {
+  width: 80%;
+  cursor: pointer;
+}
+.like {
+  width: 100%;
+  margin-bottom: 40px;
+}
+.comment {
+  width: 100%;
+  margin-bottom: 40px;
+}
+.favorite {
+  width: 75%;
+  margin-left: 6px;
+  margin-bottom: 33px;
+}
+.repost {
+  width: 90%;
+  margin-left: 3px;
+  margin-bottom: 30px;
+}
+.share {
+  width: 90%;
+  margin-left: 4px;
 }
