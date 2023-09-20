@@ -8,6 +8,8 @@ import SearchPage  from '../pages/SeachPages/SearchPage'
 import AcountPage from '../pages/SeachPages/AcountPage'
 import VideosPage from '../pages/SeachPages/VideosPage'
 import HashtagsPage from '../pages/SeachPages/HashtagsPage'
+import Create from '../pages/VideoPages/Create'
+
 
 const MainRouter = () => {
   return (
@@ -15,11 +17,12 @@ const MainRouter = () => {
       <Route path='/register' element={<RegisterPage />} />
       <Route path='/login' element={<LoginPage />} />
       <Route path='/following' element={<FollowingPage />} />
-      <Route path='/' element={<SearchPage />} />
       <Route path='/search' element={<SearchPage />} />
       <Route path='/acount' element={<AcountPage/>}/>
       <Route path='/video' element={<VideosPage/>} />
       <Route path='/hashtag' element={<HashtagsPage/>}/>
+      <Route path='/' element={<RecsPage />} />
+      <Route path='/createVideo' element={<Create />} />
     </Routes>
   )
 }

@@ -4,6 +4,10 @@
   padding: 0;
 }
 
+/*body {
+  height: 100vh;
+}*/
+
 a {
   color: #696969;
 }
@@ -12,4 +16,10 @@ a {
   padding-bottom: 10px;
   border-bottom: 5px solid #000;
   transition: 0.3s;
+}
+
+@media all and (max-width: 650px) {
+  .active{
+    border-bottom: 3px solid #000;
+  }
 }
