@@ -1,6 +1,7 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import RegisterPage from '../pages/AccountPages/RegisterPage'
+import ActivatePage from '../pages/AccountPages/ActivatePage'
 import LoginPage from '../pages/AccountPages/LoginPage'
 import FollowingPage from '../pages/VideoPages/FollowingPage'
 import RecsPage from '../pages/VideoPages/RecsPage'
@@ -13,6 +14,7 @@ const MainRouter = () => {
   return (
     <Routes>
       <Route path='/register' element={<RegisterPage />} />
+      <Route path='/activate' element={<ActivatePage />} />
       <Route path='/login' element={<LoginPage />} />
       <Route path='/following' element={<FollowingPage />} />
       <Route path='/' element={<RecsPage />} />
