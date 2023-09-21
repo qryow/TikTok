@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 import RegisterPage from '../pages/AccountPages/RegisterPage'
 import ActivatePage from '../pages/AccountPages/ActivatePage'
 import LoginPage from '../pages/AccountPages/LoginPage'
+import LogoutPage from '../pages/AccountPages/LogoutPage'
 import FollowingPage from '../pages/VideoPages/FollowingPage'
 import RecsPage from '../pages/VideoPages/RecsPage'
 import SearchPage  from '../pages/SeachPages/SearchPage'
@@ -11,12 +12,15 @@ import VideosPage from '../pages/SeachPages/VideosPage'
 import HashtagsPage from '../pages/SeachPages/HashtagsPage'
 import Create from  '../pages/VideoPages/CreateVideoPage'
 import ProfilPages from '../pages/ProfilPages/ProfilPages'
+
+
 const MainRouter = () => {
   return (
     <Routes>
       <Route path='/register' element={<RegisterPage />} />
       <Route path='/activate' element={<ActivatePage />} />
       <Route path='/login' element={<LoginPage />} />
+      <Route path='/logout' element={<LogoutPage />} />
       <Route path='/following' element={<FollowingPage />} />
       <Route path='/' element={<RecsPage />} />
       <Route path='/search' element={<SearchPage />} />

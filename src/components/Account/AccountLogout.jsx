@@ -2,14 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import style from './AccountStyles/AccountStyles.module.css';
 import { clearStatus } from '../../store/account/AccountSlice';
-import { accountActivate } from '../../store/account/AccountAction'
 import { NavLink, useNavigate } from 'react-router-dom';
 import logo from '../../img/LogoLight.svg'
 
-const AccountActivate = () => {
+const AccountLogout = () => {
   const [userObj, setUserObj] = useState({
-    email: '',
-    code: ''
+    email: ''
   });
 
   const { status } = useSelector(state => state.account);
@@ -30,7 +28,7 @@ const AccountActivate = () => {
               <img className={style.logo} src={logo} alt="" />
             </div>
 
-            <h3 className={style.nav__name}>Activate Account</h3>
+            <h3 className={style.nav__name}>Logout</h3>
 
           </div>
         </div>
@@ -47,11 +45,12 @@ const AccountActivate = () => {
         </div>*/}
 
         <div className={style.inputs__wrapper}>
-          <input className={style.input} type="email" src='' placeholder="Email@gmail.com"  onChange={(e) => setUserObj({ ...userObj, email: e.target.value})}  />
-          <input className={style.input} type="text" src='' placeholder="activate code"  onChange={(e) => setUserObj({ ...userObj, code: e.target.value})}  />
+          {/*<input className={style.input} type="email" src='' placeholder="Email@gmail.com"  onChange={(e) => setUserObj({ ...userObj, email: e.target.value})}  />*/}
+          <input className={style.input} type="email" src='' placeholder="Email@gmail.com" />
           
 
-          <button className={style.btn} onClick={() => dispatch(accountActivate({ userObj, navigate }))}>Activate</button>
+          {/*<button className={style.btn} onClick={() => dispatch(accountActivate({ userObj, navigate }))}>Activate</button>*/}
+          <button className={style.btn}>Logout</button>
         </div>
 
       </div>
@@ -59,4 +58,4 @@ const AccountActivate = () => {
     );
 };
 
-export default AccountActivate;
+export default AccountLogout;
