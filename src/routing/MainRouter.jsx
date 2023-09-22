@@ -9,6 +9,8 @@ import AcountPage from '../pages/SeachPages/AcountPage'
 import VideosPage from '../pages/SeachPages/VideosPage'
 import HashtagsPage from '../pages/SeachPages/HashtagsPage'
 import Create from  '../pages/VideoPages/CreateVideoPage'
+import InfoPage from '../pages/InfoPages/InfoPage'
+import PremiumPage from '../pages/PremiumPages/PremiumPage'
 const MainRouter = () => {
   return (
     <Routes>
@@ -21,6 +23,8 @@ const MainRouter = () => {
       <Route path='/video' element={<VideosPage/>} />
       <Route path='/hashtag' element={<HashtagsPage/>}/>
       <Route path='/createVideo' element={<Create/>}/>
+      <Route path='/information' element={<InfoPage/>}/>
+      <Route path='/premium' element={<PremiumPage/>}/>
     </Routes>
   )
 }
