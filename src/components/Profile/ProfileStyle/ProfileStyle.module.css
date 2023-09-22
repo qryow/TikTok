@@ -91,22 +91,40 @@
     display: flex;
     flex-direction: column;
 }
-.nav-links{
+.navLinks{
     display: flex;
     justify-content: flex-start;
     align-items: center;
     font-size: 30px;
 }
-.nav-links{
+.navLinks{
     margin-right: 20px;
+}
+.subcribe__logo{
+    height: 60px;
 }
 .navlink{
     margin-right: 20px;
 }
-@media  (max-width:1220px){
+@media  (max-width:1180px){
     .profile_left_txt{
-        margin-left: 10px;
+        margin-left: -4px;
+        font-size: 20px;
     }
+}
+
+@media  (max-width:1020px){
     .profile_left_txt{
+        margin-left: 4px;
+        font-size: 17px;
+    }
+    .subcribe__logo{
+        height: 45px;
+    }
+    .profil_logo{
+        height: 120px;
+    }
+    .editprofil h2{
+        font-size: 29px;
     }
 }
