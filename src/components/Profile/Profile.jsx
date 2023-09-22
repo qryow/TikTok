@@ -1,68 +1,68 @@
 import React from 'react';
 import profiLogo from '../../img/Profile.svg';
-import './ProfileStyle/ProfileStyle.css';
+import styles from './ProfileStyle/ProfileStyle.module.css';
 import { NavLink } from 'react-router-dom';
 
 const Profile = () => {
   return (
-    <div className='profile__platform'>
-      <div className="profile__left_content">
-        <span className='profile_left_txt' align='center'>Account subscriptions</span>
-        <div className='subcribe__block'>
-          <img src={profiLogo} alt="" className='subcribe__logo'/>
-          <h3 className='subcribe__name'>qryow</h3>
+    <div className={styles.profile__platform}>
+      <div className={styles.profile__left_content}>
+        <span className={styles.profile_left_txt} align='center'>Account subscriptions</span>
+        <div className={styles.subcribe__block}>
+          <img src={profiLogo} alt="" className={styles.subcribe__logo}/>
+          <h3 className={styles.subcribe__name}>qryow</h3>
         </div>
-        <div className='subcribe__block'>
-          <img src={profiLogo} alt="" className='subcribe__logo'/>
-          <h3 className='subcribe__name'>qryow</h3>
+        <div className={styles.subcribe__block}>
+          <img src={profiLogo} alt="" className={styles.subcribe__logo}/>
+          <h3 className={styles.subcribe__name}>qryow</h3>
         </div>
-        <div className='subcribe__block'>
-          <img src={profiLogo} alt="" className='subcribe__logo'/>
-          <h3 className='subcribe__name'>qryow</h3>
+        <div className={styles.subcribe__block}>
+          <img src={profiLogo} alt="" className={styles.subcribe__logo}/>
+          <h3 className={styles.subcribe__name}>qryow</h3>
         </div>
-        <div className='subcribe__block'>
-          <img src={profiLogo} alt="" className='subcribe__logo'/>
-          <h3 className='subcribe__name'>qryow</h3>
+        <div className={styles.subcribe__block}>
+          <img src={profiLogo} alt="" className={styles.subcribe__logo}/>
+          <h3 className={styles.subcribe__name}>qryow</h3>
         </div>
-        <div className='subcribe__block'>
-          <img src={profiLogo} alt="" className='subcribe__logo'/>
-          <h3 className='subcribe__name'>qryow</h3>
+        <div className={styles.subcribe__block}>
+          <img src={profiLogo} alt="" className={styles.subcribe__logo}/>
+          <h3 className={styles.subcribe__name}>qryow</h3>
         </div>
-        <div className='subcribe__block'>
-          <img src={profiLogo} alt="" className='subcribe__logo'/>
-          <h3 className='subcribe__name'>qryow</h3>
+        <div className={styles.subcribe__block}>
+          <img src={profiLogo} alt="" className={styles.subcribe__logo}/>
+          <h3 className={styles.subcribe__name}>qryow</h3>
         </div>
-        <div className='subcribe__block'>
-          <img src={profiLogo} alt="" className='subcribe__logo'/>
-          <h3 className='subcribe__name'>qryow</h3>
+        <div className={styles.subcribe__block}>
+          <img src={profiLogo} alt="" className={styles.subcribe__logo}/>
+          <h3 className={styles.subcribe__name}>qryow</h3>
         </div>
       </div>
-      <div className="profile__right_content">
-        <div className="profile_content">
-          <img src={profiLogo} alt="" className='profil_logo'/>
-          <div className='profile_left__content'>
-            <div className='editprofil'>
+      <div className={styles.profile__right_content}>
+        <div className={styles.profile_content}>
+          <img src={profiLogo} alt="" className={styles.profil_logo}/>
+          <div className={styles.profile_left__content}>
+            <div className={styles.editprofil}>
               <h2>qryow</h2>
               <button>Edit profile</button>
             </div>
-            <div className='fol_lik_flow'>
+            <div className={styles.fol_lik_flow}>
               <h3>100 following</h3>
               <h3>100 folllowers</h3>
               <h3>100 likes</h3>
             </div>
-            <h2 className='this'><small>This is description for profile</small></h2>
+            <h2 className={styles.this}><small>This is description for profile</small></h2>
           </div>
         </div><hr />
-        <div className='nav-links'>
-          <NavLink className="navlink" to="/videos">Videos</NavLink>
-          <NavLink className="navlink" to="/favorites">Favorites</NavLink>
-          <NavLink className="navlink" to="/liked">Liked</NavLink>
+        <div className={styles.navLinks}>
+          <NavLink className={styles.navlink} to="/videos">Videos</NavLink>
+          <NavLink className={styles.navlink} to="/favorites">Favorites</NavLink>
+          <NavLink className={styles.navlink} to="/liked">Liked</NavLink>
           <hr />
         </div>
-        <div className='profile_down_content'></div>
+        <div className={styles.profile_down_content}></div>
       </div>
     </div>
   )
-}
+}  
 
 export default Profile;
