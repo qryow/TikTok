@@ -2,16 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import style from './AccountStyles/AccountStyles.module.css';
 import { clearStatus } from '../../store/account/AccountSlice';
-import { registerUser } from '../../store/account/AccountAction'
+import { accountActivate } from '../../store/account/AccountAction'
 import { NavLink, useNavigate } from 'react-router-dom';
 import logo from '../../img/LogoLight.svg'
 
-const AccountRegister = () => {
+const AccountActivate = () => {
   const [userObj, setUserObj] = useState({
     email: '',
-    name: '',
-    password: '',
-    passwordConfirm: ''
+    code: ''
   });
 
   const { status } = useSelector(state => state.account);
@@ -32,29 +30,28 @@ const AccountRegister = () => {
               <img className={style.logo} src={logo} alt="" />
             </div>
 
-            <h3 className={style.nav__name}>Register</h3>
+            <h3 className={style.nav__name}>Activate Account</h3>
 
           </div>
         </div>
       </div>
 
       <div className={style.inputs}>
-        <div className={style.navigation}>
+        {/*<div className={style.navigation}>
           <NavLink className={style.nav__title} to="/register">
             Sign Up
           </NavLink>
           <NavLink className={style.nav__title} to="/login">
             Sign In
           </NavLink>
-        </div>
+        </div>*/}
 
         <div className={style.inputs__wrapper}>
           <input className={style.input} type="email" src='' placeholder="Email@gmail.com"  onChange={(e) => setUserObj({ ...userObj, email: e.target.value})}  />
-          <input className={style.input} type="text" src='' placeholder="name"  onChange={(e) => setUserObj({ ...userObj, name: e.target.value})}  />
-          <input className={style.input} type="password" minLength="6" placeholder="Password" onChange={(e) => setUserObj({ ...userObj, password: e.target.value})} />
-          <input className={style.input} type="password" minLength="6"  placeholder="Password confirm" onChange={(e) => setUserObj({ ...userObj, passwordConfirm: e.target.value})} />
+          <input className={style.input} type="text" src='' placeholder="activate code"  onChange={(e) => setUserObj({ ...userObj, code: e.target.value})}  />
+          
 
-          <button className={style.btn} onClick={() => dispatch(registerUser({ userObj, navigate }))}>Register</button>
+          <button className={style.btn} onClick={() => dispatch(accountActivate({ userObj, navigate }))}>Activate</button>
         </div>
 
       </div>
@@ -62,4 +59,4 @@ const AccountRegister = () => {
     );
 };
 
-export default AccountRegister;
+export default AccountActivate;

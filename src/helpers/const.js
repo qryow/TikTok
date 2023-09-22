@@ -1,0 +1,1 @@
+export const API = 'http://34.118.60.99/api/v1';
