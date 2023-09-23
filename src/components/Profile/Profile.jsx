@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import profiLogo from '../../img/Profile.svg';
+import logo from '../../img/LogoLight.svg'
 import styles from './ProfileStyle/ProfileStyle.module.css';
 import { NavLink } from 'react-router-dom';
 import EditProfile from './EditProfile';

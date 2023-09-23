@@ -18,7 +18,9 @@ input::placeholder {
   font-size: 16px;
   font-family: "Proxima-Nova_regular";
 }
-
+.navbar{
+    display: block;
+}
 .profile_left_txt {
     font-size: 25px;
     margin-right: 20px;
@@ -269,7 +271,6 @@ input::placeholder {
   background-color: #ff0000c7
 }
 
-
 @media  (max-width:1180px){
     .profile_left_txt{
         margin-left: -4px;
@@ -290,5 +291,105 @@ input::placeholder {
     }
     .editprofil h2{
         font-size: 29px;
+    }
+    .editprofil button{
+        width: 100px;
+    }
+}
+
+@media  (max-width:960px){
+    .profil_logo{
+        height: 100px;
+    }
+
+    .editprofil h2{
+        font-size: 29px;
+    }
+    .editprofil button{
+        width: 100px;
+        font-size: 15px;
+    }
+    .fol_lik_flow{
+        font-size: 15px;
+    }
+    .subcribe__block{
+        margin-left: 30px;
+    }
+}
+@media  (max-width:900px){
+    .profile__left_content{
+        display: none;
+    }
+    .profile__platform{
+        justify-content: center;
+    }
+    .profil_logo{
+        height: 130px;
+    }
+    .profile__right_content{
+        width: 90%;
+    }
+}
+@media (max-width:600px){
+    .navbar{
+        display: none;
+    }
+    .px600navbar{
+        display: block;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .profile__platform{
+        display: none;
+    }
+    .new_profil_platform{
+        display: block;
+    }
+    .profil_logo_name img{
+        height: 100px;
+    }
+    .profil_logo_name h3{
+        font-size: 22px;
+    }
+}
+@media (max-width:551px){
+    .logo_obj{
+        justify-content: space-around;
+    }
+    .new_profil_downcontent{
+        top: 595px;
+    }
+}
+@media (max-width:500px){
+    .new_profil_downcontent{
+        top: 590px;
+    }
+    .folowing{
+        padding-right: 40px;
+        padding-left: 20px;
+    }
+}
+@media (max-width:351px){
+    .create_logo{
+        width: 53px;
+    }
+    .logo_links{
+        width: 23px;
+    }
+    .new_profil_downcontent{
+        top: 596px;
+    }
+}
+@media (max-width:322px){
+    .create_logo{
+        width: 53px;
+    }
+    .new_profil_downcontent{
+        top: 540px;
+    }
+    .logo_links{
+        width: 23px;
     }
 }
