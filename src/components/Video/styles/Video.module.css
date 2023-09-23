@@ -9,38 +9,85 @@
   font-style: normal;
 }
 
-.wrap {
-  width: 100%;
-}
-.content {
-  height: auto;
-  display: flex;
-  /*display: none;*/
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 100px;
-  /*pointer-events: none;*/
-}
+
 .mobile__navbar_wrapper {
+  display: none;
+}
+.mobile_info__wrapper {
+  display: none;
+  position: relative;
+  top: -1990px;
+}
+.mobile_btns__wrapper {
+  position: relative;
+  top: -770px;
+  left: 500px;
+  width: 14%;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   display: none;
 }
 
 
+/*! INFO */
+.info__block {
+  width: 100%;
+  margin-left: 6%;
+  margin-top: 10px;
+  display: flex;
+}
+.info__logo {
+  width: 16%;
+}
+.logo {
+  width: 100%;
+}
+.subscribe {
+  width: 30%;
+  position: relative;
+  bottom: 20px;
+  left: 33%;
+}
+.info__text {
+  width: 70%;
+  margin: 5px 0 0 20px
+}
+.acc__name {
+  font-family: "Proxima-Nova_bold";
+  font-size: 25px;
+  margin-bottom: 5px;
+}
+.video__subtitle {
+  font-family: "Proxima-Nova_regular";
+  margin-bottom: 3px;
+  font-size: 20px;
+}
+.hashtags {
+  width: 90%;
+}
+.hashtag {
+  font-family: "Proxima-Nova_bold";
+  font-size: 20px;
+  color: #0071F6;
+  text-decoration: none;
+}
+/*! INFO END */
+
+
+
+/*!!    VIDEO     */
 .video__item {
-  width: 19%;
+  width: 55%;
+  margin-top: -10px;
+  margin-left: 25%;
   height: auto;
-  margin: 0 40px 0 50px;
-  /*display: flex;
-  align-items: center;
-  justify-content: center;*/
 }
 .video__wrapper {
   position: relative;
-  width: 100%; /* Ширина контейнера, можете изменить по вашему усмотрению */
+  width: 100%;
   padding-top: 177.78%;
-  /*width: 364px;
-  margin-right: 45px;
-  height: 649px;*/
 }
 .video {
   position: absolute;
@@ -52,13 +99,14 @@
 }
 .play {
   position: absolute;
-  left: 46%;
+  left: 47%;
   top: 50%;
 }
 
 .navigation{
-  position: relative;
-  bottom: 40px;
+  position: absolute;
+  bottom: 20px;
+  left: 5%;
   width: 90%;
   margin: 0 auto;
   .navigation_wrapper
@@ -76,84 +124,14 @@
       }
   }
 }
+/*!!    VIDEO  END    */
 
 
-/*! INFO */
-
-.info__wrapper {
-  width: 100%;
-  height: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.mobile_info__wrapper {
-  display: none;
-  position: relative;
-  top: -1990px;
-}
-
-.info__block {
-  width: 28%;
-  margin-right: 90px;
-  margin-bottom: 20px;
-  display: flex;
-}
-
-.info__logo {
-  width: 16%;
-}
-.logo {
-  width: 100%;
-}
-.subscribe {
-  position: relative;
-  bottom: 20px;
-  left: 29%;
-}
-
-.info__text {
-  margin: 5px 0 0 20px
-}
-.acc__name {
-  font-family: "Proxima-Nova_bold";
-  font-size: 25px;
-  margin-bottom: 5px;
-}
-.video__subtitle {
-  font-family: "Proxima-Nova_regular";
-  margin-bottom: 3px;
-  font-size: 20px;
-}
-
-.hashtags {
-  width: 90%;
-}
-.hashtag {
-  font-family: "Proxima-Nova_bold";
-  font-size: 20px;
-  color: #0071F6;
-  text-decoration: none;
-}
-
-
-.mobile_btns__wrapper {
-  position: relative;
-  top: -770px;
-  left: 500px;
-  width: 14%;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  display: none;
-}
+/*!!    VIDEO BUTTONS       */
 .btns__wrapper {
   position: relative;
-  width: 3%;
-  margin-top: 50px;
-  /*left: 60%;*/
-  /*top: 45%; */
+  width: 10%;
+  margin-left: 25px;
   display: flex;
   flex-direction: column;
   align-items: center;

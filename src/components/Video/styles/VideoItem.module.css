@@ -1,0 +1,20 @@
+.video__list {
+  width: 100%;
+  height: auto;
+}
+.video__item {
+  width: 100%;
+  margin-top: 13vh;
+  height: 87vh;
+  display: flex;
+  justify-content: center;
+}
+.video__item_wrapper {
+  width: 35%;
+  height: 100%;
+  background: #fff;
+}
+.wrap {
+  display: flex;
+  align-items: center;
+}

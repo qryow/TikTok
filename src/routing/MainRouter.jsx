@@ -22,13 +22,13 @@ const MainRouter = () => {
       <Route path='/activate' element={<ActivatePage />} />
       <Route path='/login' element={<LoginPage />} />
       <Route path='/logout' element={<LogoutPage />} />
-      <Route path='/following' element={<FollowingPage />} />
       <Route path='/' element={<RecsPage />} />
+      <Route path='/following' element={<FollowingPage />} />
       <Route path='/search' element={<SearchPage />} />
       <Route path='/acount' element={<AcountPage/>}/>
       <Route path='/video' element={<VideosPage/>} />
       <Route path='/hashtag' element={<HashtagsPage/>}/>
-      <Route path='/createVideo' element={<Create/>}/>
+      <Route path='/create-video' element={<Create/>}/>
       <Route path='/information' element={<InfoPage/>}/>
       <Route path='/premium' element={<PremiumPage/>}/>
       <Route path='/profil' element={<ProfilPages/>}/>
