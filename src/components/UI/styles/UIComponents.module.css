@@ -178,37 +178,9 @@ height: 40px;
     font-size: 18px;
   }
 }
-@media all and (max-width:600px){
-  .navbar_profil{
+
+@media all and (max-width: 600px){
+  .navbar {
     display: none;
-  }
-}
-@media all and (max-width: 550px){
-  .navigation {
-    width: 30%;
-  }
-  .logo__wrapper {
-    width: 20%;
-  }
-
-  .menu {
-    width: 25%;
-  }
-}
-
-@media all and (max-width: 450px){
-  .navigation {
-    width: 35%;
-    
-  }
-
-}
-
-@media all and (max-width: 350px){
-  .navigation {
-    width: 30%;
-  }
-  .nav__title{
-    font-size: 10px;
   }
 }
