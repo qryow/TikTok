@@ -1,5 +1,5 @@
 import React from 'react';
-import '../CRUD/style/Crud__videoStyles.css'
+import styles from '../CRUD/style/Crud__videoStyles.module.css';
 import logo from '../../img/LogoLight.svg';
 import profile from '../../img/Profile.svg';
 import add from '../../img/Add__light.svg';
@@ -7,28 +7,28 @@ import add from '../../img/Add__light.svg';
 const Create = () => {
     return (
         <>
-            <div className="navbar">
-                        <img className="logo" src={logo} alt="" />
-                        <img className="profile__logo" src={profile} alt="profile" />
+            <div className={styles.navbar}>
+                <img className={styles.logo} src={logo} alt="" />
+                <img className={styles.profile__logo} src={profile} alt="profile" />
             </div>
-            <hr />
-            <div className="create_content">
-                <div className="video_content">
-                    <img className="add_icon" src={add} alt='+' />
+            <hr className={styles.hr} />
+            <div className={styles.create_content}>
+                <div className={styles.video_content}>
+                    <img className={styles.add_icon} src={add} alt='+' />
                 </div>
-                <div className='video__platform'>
-                    <h2 className="create_vid">Create video</h2>
-                    <div className="video_inputs">
-                    <input type="text" placeholder='Title' className="create-inputs"/>
-                    <input type="text" placeholder='Hashtags' className="create-inputs"/>
+                <div className={styles.video__platform}>
+                    <h2 className={styles.create_vid}>Create video</h2>
+                    <div className={styles.video_inputs}>
+                        <input type="text" placeholder='Title' className={styles['create-inputs']} />
+                        <input type="text" placeholder='Hashtags' className={styles['create-inputs']} />
                     </div>
-                    <div className="create_btn">
-                        <button className="create_btns__clear">Clear</button>
-                        <button className="create_btns__post">Post</button>
+                    <div className={styles.create_btn}>
+                        <button className={styles.create_btns__clear}>Clear</button>
+                        <button className={styles.create_btns__post}>Post</button>
                     </div>
                 </div>
             </div>
-            </>
+        </>
     );
 };
 
