@@ -4,12 +4,13 @@ import RegisterPage from '../pages/AccountPages/RegisterPage'
 import ActivatePage from '../pages/AccountPages/ActivatePage'
 import LoginPage from '../pages/AccountPages/LoginPage'
 import LogoutPage from '../pages/AccountPages/LogoutPage'
+
 import FollowingPage from '../pages/VideoPages/FollowingPage'
 import RecsPage from '../pages/VideoPages/RecsPage'
 import SearchPage  from '../pages/SeachPages/SearchPage'
-import AcountPage from '../pages/SeachPages/AcountPage'
-import VideosPage from '../pages/SeachPages/VideosPage'
-import HashtagsPage from '../pages/SeachPages/HashtagsPage'
+import SearchPageAccount from '../pages/SeachPages/SearchPageAccount'
+import SearchPageHashtags from '../pages/SeachPages/SearchPageHashtags'
+
 import Create from  '../pages/VideoPages/CreateVideoPage'
 import InfoPage from '../pages/InfoPages/InfoPage'
 import PremiumPage from '../pages/PremiumPages/PremiumPage'
@@ -25,13 +26,12 @@ const MainRouter = () => {
       <Route path='/' element={<RecsPage />} />
       <Route path='/following' element={<FollowingPage />} />
       <Route path='/search' element={<SearchPage />} />
-      <Route path='/acount' element={<AcountPage/>}/>
-      <Route path='/video' element={<VideosPage/>} />
-      <Route path='/hashtag' element={<HashtagsPage/>}/>
+      <Route path='/search-accounts' element={<SearchPageAccount />} />
+      <Route path='/search-hashtags' element={<SearchPageHashtags />} />
       <Route path='/create-video' element={<Create/>}/>
       <Route path='/information' element={<InfoPage/>}/>
       <Route path='/premium' element={<PremiumPage/>}/>
-      <Route path='/profil' element={<ProfilPages/>}/>
+      <Route path='/profile' element={<ProfilPages/>}/>
     </Routes>
   )
 }

@@ -82,12 +82,7 @@
 .profile__logo {
   width: 100%;
 }
-.sob{
-height: 40px;
-}
-.domik{
- height: 34px;
-}
+
 /* !Adaptive */
 @media all and (max-width: 1800px) {
   .navigation {

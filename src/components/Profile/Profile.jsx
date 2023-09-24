@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 import EditProfile from './EditProfile';
 
 const Profile = () => {
-  const [modalActive, setModalActive] = useState(true)
+  const [modalActive, setModalActive] = useState(false)
 
   return (
     <>

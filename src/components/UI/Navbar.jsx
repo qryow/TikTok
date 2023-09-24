@@ -37,7 +37,7 @@ const Navbar = () => {
               <img className={style.add_video} src={add} alt="add video" />
             </div>
             <div className={style.profile__wrapper} >
-              <NavLink to="/profil">
+              <NavLink to="/profile">
               <img className={style.profile__logo} src={profile} alt="profile" />
               </NavLink>
             </div>
