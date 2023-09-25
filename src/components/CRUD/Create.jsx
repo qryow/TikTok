@@ -49,13 +49,6 @@ const Create = () => {
 
 
 
-
-
-
-
-
-
-
             {/*<div className={styles.create_content}>
                 <div className={styles.video_content}>
                     <img className={styles.add_icon} src={add} alt='+' />

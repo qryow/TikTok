@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { registerUser, accountActivate, loginUser } from './AccountAction';
+import { registerUser, accountActivate, loginUser, changePassword, deleteAccount, forgotPassword, forgotPasswordComplete, getProfile, accountLogout } from './AccountAction';
 import { addDataToLocalStorage } from "../../helpers/functions";
 
 const accountSlice = createSlice({
@@ -37,6 +37,40 @@ const accountSlice = createSlice({
         })
         .addCase(loginUser.rejected, (state) => {
             state.status = 'error';
+        })
+        .addCase(changePassword.fulfilled, (_, action) => {
+          action.payload.navigate('/')
+        })
+        .addCase(changePassword.rejected, (state) => {
+          state.status = 'error'
+        })
+        .addCase(deleteAccount.fulfilled, (_, action) => {
+          action.payload.navigate('/')
+        })
+        .addCase(deleteAccount.rejected, (state) => {
+          state.status = 'error'
+        })
+        .addCase(accountLogout.fulfilled, (_, action) => {
+          action.payload.navigate('/')
+        })
+        .addCase(accountLogout.rejected, (state) => {
+          state.status = 'error'
+        })
+        .addCase(forgotPassword.fulfilled, (_, action) => {
+          action.payload.navigate('/')
+        })
+        .addCase(forgotPassword.rejected, (state) => {
+          state.status = 'error'
+        })
+        .addCase(forgotPasswordComplete.fulfilled, (_, action) => {
+          action.payload.navigate('/change-password-complete')
+        })
+        .addCase(forgotPasswordComplete.rejected, (state) => {
+          state.status = 'error'
+        })
+        .addCase(getProfile.fulfilled, (state, action) => {
+          state.currentAccount = action.payload;
+          console.log(action.payload);
         })
     }
 });

@@ -76,11 +76,16 @@
   width: 100%;
 }
 
+.home__wrapper {
+  width: 19%;
+  margin-bottom: 3px;
+}
 .profile__wrapper {
   width: 25%;
 }
 .profile__logo {
   width: 100%;
+  border-radius: 50%;
 }
 
 /* !Adaptive */

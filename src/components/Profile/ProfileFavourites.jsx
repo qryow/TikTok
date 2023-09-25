@@ -6,7 +6,7 @@ import Subscriptions from '../UI/subscriptions/SubscriptionsList'
 import EditProfile from './EditProfile';
 import { useSelector } from 'react-redux';
 
-const Profile = () => {
+const ProfileFavorites = () => {
   const [modalActive, setModalActive] = useState(false)
   const { currentAccount } = useSelector(state => state.account)
 
@@ -70,4 +70,4 @@ const Profile = () => {
   )
 }  
 
-export default Profile;
+export default ProfileFavorites;

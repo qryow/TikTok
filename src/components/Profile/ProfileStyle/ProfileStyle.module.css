@@ -1,12 +1,12 @@
 @font-face {
-    font-family: "Proxima-Nova_bold";
-    src: url("../../../fonts/ProximaNova/proximanova_bold.otf") format("truetype");
-    font-style: normal;
+  font-family: "Proxima-Nova_bold";
+  src: url("../../../fonts/ProximaNova/proximanova_bold.otf") format("truetype");
+  font-style: normal;
 }
 @font-face {
-    font-family: "Proxima-Nova_extra-bold";
-    src: url("../../../fonts/ProximaNova/proximanova_extrabold.otf") format("truetype");
-    font-style: normal;
+  font-family: "Proxima-Nova_extra-bold";
+  src: url("../../../fonts/ProximaNova/proximanova_extrabold.otf") format("truetype");
+  font-style: normal;
 }
 @font-face {
   font-family: "Proxima-Nova_regular";
@@ -18,106 +18,91 @@ input::placeholder {
   font-size: 16px;
   font-family: "Proxima-Nova_regular";
 }
-.navbar{
-    display: block;
-}
-.profile_left_txt {
-    font-size: 25px;
-    margin-right: 20px;
-}
 
-.subcribe__block {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-right: 100px;
-    margin-top: 15px;
-}
-
-.profile__left_content {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 24%;
-    padding-top: 20px;
-}
-
-.profile__platform {
-    width: 100%;
-    height: 100%;
-    display: flex;
-}
-
-.subcribe__name {
-    margin-right: 20px;
-}
-
-.profile__right_content {
-    width: 60%;
-}
-
-.profile_content {
-    display: flex;
-    width: 100%;
-}
-
-.profile_left__content {
-    width: 70%;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-}
-
-.editprofil {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.editprofil h2 {
-    font-size: 39px;
-}
-
-.editprofil button {
-    width: 160px;
-    height: 38px;
+.edit__profile__btn {
+    width: 190%;
+    height: 50px;
+    /*margin-top: 20px;*/
     font-size: 20px;
     background-color: inherit;
     border: 1px solid black;
     border-radius: 5px;
 }
 
-.profil_logo {
-    height: 180px;
+.profile__wrapper {
+  position: relative;
+  width: 100%;
+  margin-top: 13vh;
+  height: 87vh;
+  display: flex;
+  justify-content: flex-end;
+  pointer-events: none;
+}
+.profile__content {
+  width: 80%;
+  height: 25%;
+  pointer-events: all;
+}
+.profile__info {
+  width: 60%;
+  margin-left: 30px;
+  height: 100%;;
+  display: flex;
+  align-items: center;
+}
+.profile__logo_wrapper {
+  width: 20%;
+}
+.profile__logo {
+  width: 100%;
+  border-radius: 50%;
+}
+.profile__info_content {
+  width: 70%;
+  height: 80%;
+  margin-left: 20px;
+}
+.profile__name {
+  font-family: "Proxima-Nova_bold";
+  font-size: 40px;
 }
 
-.fol_lik_flow {
-    display: flex;
+.subscriptions {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  height: 30%;
+}
+.following {
+  width: 35%;
+}
+.count {
+  font-family: "Proxima-Nova_bold";
+  font-size: 25px;
+}
+.follow__text {
+  font-family: "Proxima-Nova_regular";
+  font-size: 25px;
 }
 
-.fol_lik_flow h3 {
-    font-family: small;
-    margin-right: 20px;
+.profile__desc {
+  margin-top: 20px;
+  font-family: "Proxima-Nova_regular";
+  font-size: 18px;
 }
 
-.profil_container {
-    display: flex;
-    flex-direction: column;
+.navigation {
+  width: 100%;
+  margin-top: 10px;
+  height: 30%;
+  border-bottom: 2px solid #696969;
 }
-.navLinks{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    font-size: 30px;
-}
-.navLinks{
-    margin-right: 20px;
-}
-.subcribe__logo{
-    height: 60px;
-}
-.navlink{
-    margin-right: 20px;
+.nav__title {
+  margin-left: 40px;
+  margin-right: 80px;
+  font-family: 'Proxima-Nova_bold';
+  font-size: 30px;
+  text-decoration: none;
 }
 
 
@@ -135,6 +120,7 @@ input::placeholder {
   opacity: 0;
   pointer-events: none;
   transition: 0.2s;
+  z-index: 1;
 }
 .modal.active {
   opacity: 1;
@@ -177,6 +163,14 @@ input::placeholder {
   margin-top: 20px;
   display: flex;
   align-items: center;
+}
+.img__wrapper {
+  width: 15%;
+  border-radius: 50%;
+}
+.img {
+  width: 100%;
+  border-radius: 50%;
 }
 .edit__name {
   width: 100%;
@@ -239,7 +233,7 @@ input::placeholder {
   width: 75%;
   margin-top: 30px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 .clear__btn {
   width: 45%;
@@ -270,6 +264,14 @@ input::placeholder {
 .edit__btn:hover {
   background-color: #ff0000c7
 }
+
+
+
+
+
+
+
+
 
 @media  (max-width:1180px){
     .profile_left_txt{

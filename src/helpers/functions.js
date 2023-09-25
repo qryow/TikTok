@@ -1,11 +1,11 @@
-export const addDataToLocalStorage = (userEmail, tokens) => {
+export const addDataToLocalStorage = (userEmail, token) => {
     localStorage.setItem('account', JSON.stringify(userEmail));
-    localStorage.setItem('tokens', JSON.stringify(tokens));
+    localStorage.setItem('token', JSON.stringify(token));
 };
 
 export const logout = () => {
     localStorage.removeItem('account');
-    localStorage.removeItem('tokens');
+    localStorage.removeItem('token');
 };
 
 export const isUserLogin = () => {
@@ -15,13 +15,15 @@ export const isUserLogin = () => {
 };
 
 export const getAuthConfig = () => {
-    const tokens = JSON.parse(localStorage.getItem('tokens'));
-    if(!tokens) return false;
-    const Authorization = `Bearer ${tokens.access}`;
+    const token = JSON.parse(localStorage.getItem('token'));
+    console.log(token);
+    if(!token) return false;
+    const Authorization = `Token ${token.token}`;
     const config = {
         headers: {
-            Authorization
+          Authorization
         }
     };
+    console.log(config);
     return config;
 };
