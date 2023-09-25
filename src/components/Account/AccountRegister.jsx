@@ -1,14 +1,29 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import style from './AccountStyles/AccountStyles.module.css';
+import { clearStatus } from '../../store/account/AccountSlice';
+import { registerUser } from '../../store/account/AccountAction'
 import { NavLink, useNavigate } from 'react-router-dom';
-
 import logo from '../../img/LogoLight.svg'
 
 const AccountRegister = () => {
+  const [userObj, setUserObj] = useState({
+    email: '',
+    name: '',
+    password: '',
+    passwordConfirm: ''
+  });
+
+  const { status } = useSelector(state => state.account);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  useEffect(() => {
+    dispatch(clearStatus());
+  }, []);
+
   return (
-    <>
+    <div>
       <div className={style.navbar}>
         <div className={style.container}>
           <div className={style.nav__wrapper}>
@@ -34,15 +49,16 @@ const AccountRegister = () => {
         </div>
 
         <div className={style.inputs__wrapper}>
-          <input className={style.input} type="email" src='' placeholder="Email@gmail.com" />
-          <input className={style.input} type="password" minLength="6" placeholder="Password" />
-          <input className={style.input} type="password" minLength="6"  placeholder="Password confirm" />
+          <input className={style.input} type="email" src='' placeholder="Email@gmail.com"  onChange={(e) => setUserObj({ ...userObj, email: e.target.value})}  />
+          <input className={style.input} type="text" src='' placeholder="name"  onChange={(e) => setUserObj({ ...userObj, name: e.target.value})}  />
+          <input className={style.input} type="password" minLength="6" placeholder="Password" onChange={(e) => setUserObj({ ...userObj, password: e.target.value})} />
+          <input className={style.input} type="password" minLength="6"  placeholder="Password confirm" onChange={(e) => setUserObj({ ...userObj, passwordConfirm: e.target.value})} />
 
-          <button className={style.btn} onClick={() => navigate('/login')}>Register</button>
+          <button className={style.btn} onClick={() => dispatch(registerUser({ userObj, navigate }))}>Register</button>
         </div>
 
       </div>
-    </>
+    </div>
     );
 };
 
