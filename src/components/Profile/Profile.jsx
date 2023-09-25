@@ -1,68 +1,73 @@
-import React from 'react';
-import profiLogo from '../../img/Profile.svg';
-import './ProfileStyle/ProfileStyle.css';
+import React, { useState } from 'react';
+import style from './ProfileStyle/ProfileStyle.module.css';
 import { NavLink } from 'react-router-dom';
+import ProfileNavbar from './ProfileNavbar'
+import Subscriptions from '../UI/subscriptions/SubscriptionsList'
+import EditProfile from './EditProfile';
+import { useSelector } from 'react-redux';
 
 const Profile = () => {
+  const [modalActive, setModalActive] = useState(false)
+  const { currentAccount } = useSelector(state => state.account)
+
   return (
-    <div className='profile__platform'>
-      <div className="profile__left_content">
-        <span className='profile_left_txt' align='center'>Account subscriptions</span>
-        <div className='subcribe__block'>
-          <img src={profiLogo} alt="" className='subcribe__logo'/>
-          <h3 className='subcribe__name'>qryow</h3>
-        </div>
-        <div className='subcribe__block'>
-          <img src={profiLogo} alt="" className='subcribe__logo'/>
-          <h3 className='subcribe__name'>qryow</h3>
-        </div>
-        <div className='subcribe__block'>
-          <img src={profiLogo} alt="" className='subcribe__logo'/>
-          <h3 className='subcribe__name'>qryow</h3>
-        </div>
-        <div className='subcribe__block'>
-          <img src={profiLogo} alt="" className='subcribe__logo'/>
-          <h3 className='subcribe__name'>qryow</h3>
-        </div>
-        <div className='subcribe__block'>
-          <img src={profiLogo} alt="" className='subcribe__logo'/>
-          <h3 className='subcribe__name'>qryow</h3>
-        </div>
-        <div className='subcribe__block'>
-          <img src={profiLogo} alt="" className='subcribe__logo'/>
-          <h3 className='subcribe__name'>qryow</h3>
-        </div>
-        <div className='subcribe__block'>
-          <img src={profiLogo} alt="" className='subcribe__logo'/>
-          <h3 className='subcribe__name'>qryow</h3>
-        </div>
-      </div>
-      <div className="profile__right_content">
-        <div className="profile_content">
-          <img src={profiLogo} alt="" className='profil_logo'/>
-          <div className='profile_left__content'>
-            <div className='editprofil'>
-              <h2>qryow</h2>
-              <button>Edit profile</button>
+    <>
+      <ProfileNavbar />
+      <Subscriptions />
+      <div className={style.profile__wrapper}>
+        <div className={style.profile__content}>
+
+
+          { currentAccount && (
+            <div className={style.profile__info}>
+              <div className={style.profile__logo_wrapper}>
+                <img className={style.profile__logo} src={ currentAccount.avatar} alt="profile logo" />
+              </div>
+
+              <div className={style.profile__info_content}>
+                <h4 className={style.profile__name}> { currentAccount.name } </h4>
+                
+                <div className={style.subscriptions}>
+                  <div className={style.following}>
+                    <p className={style.follow__text}> <span className={style.count}>100</span> following</p>
+                  </div>
+                  <div className={style.following}>
+                    <p className={style.follow__text}> <span className={style.count}>100</span> followers</p>
+                  </div>
+                  <div className={style.following}>
+                    <p className={style.follow__text}> <span className={style.count}>100</span> posts</p>
+                  </div>
+                </div>
+
+                <p className={style.profile__desc}> {currentAccount.description} </p>
+              </div>
+
+              <div className={style.btn__wrapper}>
+                <button className={style.edit__profile__btn} onClick={() => setModalActive(true)}>Edit profile</button>
+              </div>
             </div>
-            <div className='fol_lik_flow'>
-              <h3>100 following</h3>
-              <h3>100 folllowers</h3>
-              <h3>100 likes</h3>
-            </div>
-            <h2 className='this'><small>This is description for profile</small></h2>
+          )}
+
+          <div className={style.navigation}>
+            <NavLink className={style.nav__title} to="/profile">
+              Videos
+            </NavLink>
+            <NavLink className={style.nav__title} to="/profile-favorites">
+              Favorites
+            </NavLink>
+            <NavLink className={style.nav__title} to="/profile-reposts">
+              Reposts
+            </NavLink>
+            <NavLink className={style.nav__title} to="/profile-likes">
+              Likes
+            </NavLink>
           </div>
-        </div><hr />
-        <div className='nav-links'>
-          <NavLink className="navlink" to="/videos">Videos</NavLink>
-          <NavLink className="navlink" to="/favorites">Favorites</NavLink>
-          <NavLink className="navlink" to="/liked">Liked</NavLink>
-          <hr />
+          
         </div>
-        <div className='profile_down_content'></div>
       </div>
-    </div>
+      <EditProfile active={modalActive} setActive={setModalActive} />
+    </>
   )
-}
+}  
 
 export default Profile;

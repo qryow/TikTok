@@ -103,10 +103,9 @@
 .navlink{
     margin-right: 20px;
 }
+
 @media  (max-width:1220px){
     .profile_left_txt{
         margin-left: 10px;
-    }
-    .profile_left_txt{
     }
 }

@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
-import style from './styles/Video.module.css';
-import videoFile from '../../videos/video.mp4';
-import play from '../../img/play.svg';
+import style from '../styles/Video.module.css';
+import videoFile from '../../../videos/video.mp4';
+import play from '../../../img/play.svg';
 
 const Video = () => {
   const videoRef = useRef();
@@ -15,12 +15,6 @@ const Video = () => {
     videoElement.addEventListener('ended', () => {
       videoElement.currentTime = 0;
       setIsPlaying(true);
-    });
-
-    videoElement.addEventListener('canplaythrough', () => {
-      if (isPlaying) {
-        videoElement.play();
-      }
     });
 
     videoElement.addEventListener('timeupdate', () => {
@@ -58,11 +52,28 @@ const Video = () => {
     videoRef.current.currentTime = (progress / 100) * duration;
   };
 
+  const handleMouseEnter = () => {
+    if (!isPlaying) {
+      setIsPlaying(true);
+      videoRef.current.play();
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (isPlaying) {
+      setIsPlaying(false);
+      videoRef.current.pause();
+    }
+  };
+
   return (
-    <div className={style.video__item}>
+    <div className={style.video__item}
+    //onMouseEnter={handleMouseEnter}
+    //onMouseLeave={handleMouseLeave}
+    >
       {isPlaying ? (
         <div className={style.video__wrapper}>
-          <video className={style.video} ref={videoRef} onClick={PlayPause}>
+          <video autoPlay loop className={style.video} ref={videoRef} onClick={PlayPause}>
             <source src={videoFile} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
@@ -88,4 +99,3 @@ const Video = () => {
 };
 
 export default Video;
-

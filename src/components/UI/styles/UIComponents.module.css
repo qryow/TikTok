@@ -5,9 +5,15 @@
 }
 
 .navbar {
+  position: fixed;
+  top: 0px;
   width: 100%;
+  z-index: 1;
   height: auto;
+  background-color: #fff;
+  border-bottom: 2px solid #969696;
 }
+
 .container {
   width: 95%;
   margin: 0 auto;
@@ -21,10 +27,10 @@
 }
 
 .logo__wrapper {
-  width: 12%;
+  width: 15%;
 }
 .logo {
-  width: 90%;
+  width: 80%;
 }
 
 .navigation {
@@ -39,7 +45,9 @@
   font-size: 35px;
   text-decoration: none;
 }
-
+.navbar_profil{
+  display: block;
+}
 .menu {
   width: 15%;
   display: flex;
@@ -53,6 +61,14 @@
   width: 100%;
 }
 
+.inbox__wrapper {
+  width: 15%;
+  margin: 0 5px;
+}
+.inbox {
+  width: 100%;
+}
+
 .add_video__wrapper {
   width: 25%;
 }
@@ -60,11 +76,16 @@
   width: 100%;
 }
 
+.home__wrapper {
+  width: 19%;
+  margin-bottom: 3px;
+}
 .profile__wrapper {
   width: 25%;
 }
 .profile__logo {
   width: 100%;
+  border-radius: 50%;
 }
 
 /* !Adaptive */
@@ -123,6 +144,13 @@
   .nav__title {
     font-size: 25px;
   }
+  .sob{
+    height: 30px;
+  }
+  .domik{
+    height: 27px;
+  }
+
 }
 @media all and (max-width: 900px) {
   .nav__title {
@@ -148,6 +176,12 @@
   .menu {
     width: 20%;
   }
+  .sob{
+    height: 20px;
+  }
+  .domik{
+    height: 23px;
+  }
 }
 @media all and (max-width: 700px) {
   .navigation {
@@ -158,32 +192,8 @@
   }
 }
 
-@media all and (max-width: 550px){
-  .navigation {
-    width: 30%;
-  }
-  .logo__wrapper {
-    width: 20%;
-  }
-
-  .menu {
-    width: 25%;
-  }
-}
-
-@media all and (max-width: 450px){
-  .navigation {
-    width: 35%;
-    
-  }
-
-}
-
-@media all and (max-width: 350px){
-  .navigation {
-    width: 30%;
-  }
-  .nav__title{
-    font-size: 10px;
+@media all and (max-width: 600px){
+  .navbar {
+    display: none;
   }
 }
