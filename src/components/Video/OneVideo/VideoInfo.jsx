@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import style from './styles/Video.module.css'
+import style from '../styles/Video.module.css'
 
-import logo from '../../img/Profile.svg'
-import subscribe from '../../img/Subscribe.svg'
+import logo from '../../../img/Profile.svg'
+import subscribe from '../../../img/Subscribe.svg'
 
 const VideoInfo = () => {
   const [subscribed, setSubscribed] = useState(false);
@@ -14,7 +14,6 @@ const VideoInfo = () => {
 
   return (
     <>
-      <div className={style.info__wrapper}>
         <div className={style.info__block}>
 
           <div className={style.info__logo}>
@@ -39,7 +38,6 @@ const VideoInfo = () => {
 
 
         </div>
-      </div>
     </>
   )
 }

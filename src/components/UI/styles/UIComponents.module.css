@@ -5,8 +5,13 @@
 }
 
 .navbar {
+  position: fixed;
+  top: 0px;
   width: 100%;
+  z-index: 1;
   height: auto;
+  background-color: #fff;
+  border-bottom: 2px solid #969696;
 }
 
 .container {
@@ -22,10 +27,10 @@
 }
 
 .logo__wrapper {
-  width: 12%;
+  width: 15%;
 }
 .logo {
-  width: 90%;
+  width: 80%;
 }
 
 .navigation {
@@ -56,6 +61,14 @@
   width: 100%;
 }
 
+.inbox__wrapper {
+  width: 15%;
+  margin: 0 5px;
+}
+.inbox {
+  width: 100%;
+}
+
 .add_video__wrapper {
   width: 25%;
 }
@@ -63,18 +76,18 @@
   width: 100%;
 }
 
+.home__wrapper {
+  width: 19%;
+  margin-bottom: 3px;
+}
 .profile__wrapper {
   width: 25%;
 }
 .profile__logo {
   width: 100%;
+  border-radius: 50%;
 }
-.sob{
-height: 40px;
-}
-.domik{
- height: 34px;
-}
+
 /* !Adaptive */
 @media all and (max-width: 1800px) {
   .navigation {

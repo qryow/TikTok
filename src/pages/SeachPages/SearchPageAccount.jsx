@@ -3,7 +3,7 @@ import SearchNavbar from '../../components/Search/SearchNavbar'
 import Subscriptions from '../../components/UI/subscriptions/SubscriptionsList'
 import SearchList from '../../components/Search/SearchList'
 
-const SearchPage = () => {
+const SearchPageAccount = () => {
   return (
     <div>
       <SearchNavbar />
@@ -13,4 +13,4 @@ const SearchPage = () => {
   )
 }
 
-export default SearchPage
+export default SearchPageAccount

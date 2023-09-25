@@ -3,9 +3,9 @@ import MainRouter from './routing/MainRouter'
 
 const App = () => {
   return (
-    <div>
+    <>
       <MainRouter />
-    </div>
+    </>
   )
 }
 

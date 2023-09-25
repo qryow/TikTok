@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import style from './AccountStyles/AccountStyles.module.css';
 import { clearStatus } from '../../store/account/AccountSlice';
-import { accountLogout } from '../../store/account/AccountAction'
+import { deleteAccount } from '../../store/account/AccountAction';
+import style from './AccountStyles/AccountStyles.module.css';
 import { NavLink, useNavigate } from 'react-router-dom';
+
 import logo from '../../img/LogoLight.svg'
 
-const AccountLogout = () => {
+const DeleteAccount = () => {
   const [userObj, setUserObj] = useState({
-    
-  });
-
+    email: '',
+    password: ''
+  });               
   const { status } = useSelector(state => state.account);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -20,7 +21,7 @@ const AccountLogout = () => {
   }, []);
 
   return (
-    <div>
+    <>
       <div className={style.navbar}>
         <div className={style.container}>
           <div className={style.nav__wrapper}>
@@ -29,33 +30,32 @@ const AccountLogout = () => {
               <img className={style.logo} src={logo} alt="" />
             </div>
 
-            <h3 className={style.nav__name}>Logout</h3>
+            <h3 className={style.nav__name}>Delete Account</h3>
 
           </div>
         </div>
       </div>
 
       <div className={style.inputs}>
-        {/*<div className={style.navigation}>
+        <div className={style.navigation}>
           <NavLink className={style.nav__title} to="/register">
             Sign Up
           </NavLink>
           <NavLink className={style.nav__title} to="/login">
             Sign In
           </NavLink>
-        </div>*/}
+        </div>
 
         <div className={style.inputs__wrapper}>
-          {/*<input className={style.input} type="email" src='' placeholder="Email@gmail.com"  onChange={(e) => setUserObj({ ...userObj, email: e.target.value})}  />*/}
-          {/*<input className={style.input} type="text" minLength="6" placeholder="Password" onChange={(e) => setUserObj({ ...userObj, Token: e.target.value})} />*/}
+          <input className={style.input} type="email" placeholder="Email" onChange={(e) => setUserObj({ ...userObj, email: e.target.value})} />
+          <input className={style.input} type="password" minLength="6" placeholder="Password" onChange={(e) => setUserObj({ ...userObj, password: e.target.value})} />
 
-          {/*<button className={style.btn} onClick={() => dispatch(accountActivate({ userObj, navigate }))}>Activate</button>*/}
-          <button className={style.btn} onClick={() => dispatch(accountLogout({ userObj, navigate }))}>Logout</button>
+          <button className={style.btn} onClick={() => dispatch(deleteAccount({ userObj, navigate }))}>Delete</button>
         </div>
 
       </div>
-    </div>
-    );
-};
+    </>
+  )
+}
 
-export default AccountLogout;
+export default DeleteAccount
