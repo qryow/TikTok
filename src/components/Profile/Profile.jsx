@@ -72,7 +72,8 @@ const Profile = () => {
           </div>
         </div>
         <div className={styles.navLinks}>
-          <NavLink className={styles.navlink} to="/videos">Videos</NavLink>
+          <NavLink className={styles.navlink} to="/myvideos">Videos</NavLink>
+          <NavLink className={styles.navlink} to="reposts">Reposts</NavLink>
           <NavLink className={styles.navlink} to="/favorites">Favorites</NavLink>
           <NavLink className={styles.navlink} to="/liked">Liked</NavLink>
           <hr />
@@ -105,8 +106,8 @@ const Profile = () => {
       </div>
       <div className={styles.obj_platform}>
         <div className={styles.logo_obj}>
-          <NavLink className={styles.navlink2} to="/videos"><img src={myvideo} alt="" /></NavLink>
-          <NavLink className={styles.navlink2} ><img src={repost} alt="" /></NavLink>
+          <NavLink className={styles.navlink2} to="/myvideos"><img src={myvideo} alt="" /></NavLink>
+          <NavLink className={styles.navlink2} to="/reposts"><img src={repost} alt="" /></NavLink>
           <NavLink className={styles.navlink2} to="/favorites"><img src={favoritelogo} alt="" /></NavLink>
           <NavLink className={styles.navlink2}to="/liked"><img src={likelogo} alt="" /></NavLink>
         </div>

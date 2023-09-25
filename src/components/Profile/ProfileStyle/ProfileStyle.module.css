@@ -177,6 +177,7 @@
     height: 20px;
 }
 .sa{
+    background-color: #fff;
 }
 .new_profil_centercontent{
     display: flex;
@@ -334,5 +335,8 @@ border-top: 1px solid black;
     }
     .logo_links{
         width: 23px;
+    }
+    .logo_obj{
+        width: 80%;
     }
 }

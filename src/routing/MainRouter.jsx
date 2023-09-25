@@ -10,6 +10,8 @@ import VideosPage from '../pages/SeachPages/VideosPage'
 import HashtagsPage from '../pages/SeachPages/HashtagsPage'
 import Create from  '../pages/VideoPages/CreateVideoPage'
 import ProfilPages from '../pages/ProfilPages/ProfilPages'
+import ForGoodPage from '../pages/addaptionalSitesPages/ForGoodPage'
+import ForgoodAcardions from '../components/additional sites/ForgoodAcardions'
 const MainRouter = () => {
   return (
     <Routes>
@@ -23,6 +25,8 @@ const MainRouter = () => {
       <Route path='/hashtag' element={<HashtagsPage/>}/>
       <Route path='/createVideo' element={<Create/>}/>
       <Route path='/profil' element={<ProfilPages/>}/>
+      <Route path='/forgood' element={<ForGoodPage/>}/>
+      <Route path='/acardion' element={<ForgoodAcardions/>}/>
     </Routes>
   )
 }
