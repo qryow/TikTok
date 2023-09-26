@@ -5,6 +5,7 @@ import ProfileNavbar from './ProfileNavbar'
 import Subscriptions from '../UI/subscriptions/SubscriptionsList'
 import EditProfile from './EditProfile';
 import { useSelector } from 'react-redux';
+import PremiumIcon from '../Premium/PremiumIcon';
 
 const Profile = () => {
   const [modalActive, setModalActive] = useState(false)
@@ -22,6 +23,7 @@ const Profile = () => {
             <div className={style.profile__info}>
               <div className={style.profile__logo_wrapper}>
                 <img className={style.profile__logo} src={ currentAccount.avatar} alt="profile logo" />
+                <PremiumIcon />
               </div>
 
               <div className={style.profile__info_content}>
