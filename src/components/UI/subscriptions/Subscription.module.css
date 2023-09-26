@@ -65,3 +65,37 @@
   color: #000;
   margin-left: 15px;
 }
+
+
+@media all and (max-width: 1270px) {
+  .sub__title {
+    margin-top: 20px;
+    font-size: 17px;
+  }
+}
+
+@media all and (max-width: 1150px) {
+  .sub__title {
+    /*margin-top: 30px;*/
+    font-size: 15px;
+  }
+  .sub__name {
+    font-size: 20px;
+  }
+}
+
+@media all and (max-width: 770px) {
+  .sub__block {
+    width: 25%;
+    padding: 20px 10px;
+  }
+  .sub__name {
+    font-size: 16px;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .sub__block {
+    display: none;
+  }
+}

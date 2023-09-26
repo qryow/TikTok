@@ -3,9 +3,11 @@ import { useSelector, useDispatch } from 'react-redux'
 import { getProfile } from '../../store/account/AccountAction'
 import style from '././styles/VideoItem.module.css'
 import VideoItem from '../../components/Video/VideoItem'
+import { getPosts } from '../../store/posts/postsActions'
 
 const VideoList = () => {
   const { currentAccount, loading } = useSelector(state => state.account)
+  const { posts } = useSelector(state => state.posts)
 
   const dispatch = useDispatch()
 
@@ -13,16 +15,19 @@ const VideoList = () => {
   //* после получения всех видео сделать анимацию скролла с помощью индексов 
 
   useEffect(() => {
-    dispatch(getProfile());
+    dispatch(getPosts());
   }, []);
 
   return (
     <>
       <div className={style.video__list}>
-
-        <VideoItem />
-        <VideoItem />
-        
+        {Array.isArray(posts.results) ? (
+          posts.results.map(post => (
+            <VideoItem key={post.id} post={post} />
+          ))
+        ) : (
+          <p>No posts to display</p>
+        )}
       </div>
     </>
   )

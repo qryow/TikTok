@@ -4,7 +4,7 @@ import style from '../styles/Video.module.css'
 import logo from '../../../img/Profile.svg'
 import subscribe from '../../../img/Subscribe.svg'
 
-const VideoInfo = () => {
+const VideoInfo = ({ post }) => {
   const [subscribed, setSubscribed] = useState(false);
 
   const handleSubscribeClick = () => {
@@ -22,17 +22,11 @@ const VideoInfo = () => {
           </div>
 
           <div className={style.info__text}>
-            <h4 className={style.acc__name}>masteroogway</h4>
-            <p className={style.video__subtitle}>Why is it so small?</p>
+            <h4 className={style.acc__name}> {post.user} </h4>
+            <p className={style.video__subtitle}> {post.title} </p>
 
             <div className={style.hashtags}>
-              <a className={style.hashtag} href="/">#car </a>
-              <a className={style.hashtag} href="/">#jdm </a>
-              <a className={style.hashtag} href="/">#japan </a>
-              <a className={style.hashtag} href="/">#skyline </a>
-              <a className={style.hashtag} href="/">#gtr34 </a>
-              <a className={style.hashtag} href="/">#nissan </a>
-              <a className={style.hashtag} href="/">#edit </a>
+              <a className={style.hashtag} href="/"> {post.categories} </a>
             </div>
           </div>
 

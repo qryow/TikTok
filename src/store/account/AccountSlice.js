@@ -70,7 +70,6 @@ const accountSlice = createSlice({
         })
         .addCase(getProfile.fulfilled, (state, action) => {
           state.currentAccount = action.payload;
-          console.log(action.payload);
         })
     }
 });

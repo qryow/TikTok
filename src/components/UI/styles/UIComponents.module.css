@@ -150,6 +150,9 @@
   .domik{
     height: 27px;
   }
+  .nav__wrapper {
+    height: 90px;
+  }
 
 }
 @media all and (max-width: 900px) {

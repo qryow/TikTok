@@ -15,7 +15,6 @@ export const registerUser = createAsyncThunk(
         formData.append('password', userObj.password);
         formData.append('password_confirm', userObj.passwordConfirm);
         let { data } = await axios.post(`${API}/account/register/`, formData);
-        console.log(data);
         return { data, navigate };
     }
 );
@@ -27,7 +26,6 @@ export const accountActivate = createAsyncThunk(
       formData.append('email', userObj.email);
       formData.append('code', userObj.code);
       let { data } = await axios.post(`${API}/account/activate/`, formData);
-      console.log(data);
       return { data, navigate };
   }
 );
@@ -41,7 +39,6 @@ export const changePassword = createAsyncThunk(
       formData.append('new_password', userObj.new_password);
       formData.append('new_password_confirm', userObj.new_password_confirm);
       let { data } = await axios.post(`${API}/account/change_password/`, formData, config);
-      console.log(data);
       return { data, navigate };
   }
 );
@@ -50,11 +47,9 @@ export const accountLogout = createAsyncThunk(
   'account/accountLogout',
   async ({ userObj, navigate }) => {
       const config = getAuthConfig();
-      console.log(config);
       let { data } = await axios.post(`${API}/account/logout/`, {}, config);
       localStorage.removeItem('token');
       localStorage.removeItem('account');
-      console.log(data);
       return { data, navigate };
   }
 );
@@ -69,7 +64,6 @@ export const deleteAccount = createAsyncThunk(
       let { data } = await axios.post(`${API}/account/delete_account/`, formData, config);
       localStorage.removeItem('token');
       localStorage.removeItem('account');
-      console.log(data);
       return { data, navigate };
   }
 );
@@ -80,7 +74,6 @@ export const forgotPassword = createAsyncThunk(
       let formData = new FormData();
       formData.append('email', userObj.email);
       let { data } = await axios.post(`${API}/account/forgot_password/`, formData);
-      console.log(data);
       return { data, navigate };
   }
 );
@@ -93,7 +86,6 @@ export const forgotPasswordComplete = createAsyncThunk(
       formData.append('password', userObj.password);
       formData.append('password_confirm', userObj.password_confirm);
       let { data } = await axios.post(`${API}/account/forgot_password/complete/`, formData);
-      console.log(data);
       return { data, navigate };
   }
 );
@@ -116,9 +108,7 @@ export const getProfile = createAsyncThunk(
   async () => {
     const config = getAuthConfig();
     const email = JSON.parse(localStorage.getItem('account'));
-    console.log(email);
       const { data } = await axios.get(`${API}/account/profile/${email}`, config ? config : null);
-      console.log(data);
       return data;
   }
 )
