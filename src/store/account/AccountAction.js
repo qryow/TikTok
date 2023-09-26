@@ -100,14 +100,15 @@ export const forgotPasswordComplete = createAsyncThunk(
 
 
 export const loginUser = createAsyncThunk(
-    'account/loginUser',
-    async ({ userObj, navigate }) => {
-        let formData = new FormData();
-        formData.append('email', userObj.email);
-        formData.append('password', userObj.password);
-        let { data } = await axios.post(`${API}/account/login/`, formData);
-        return { data, navigate, userEmail: userObj.email };
-    }
+  'account/loginUser',
+  async ({ userObj, navigate }) => {
+      let formData = new FormData();
+      formData.append('email', userObj.email);
+      formData.append('password', userObj.password);
+      let { data } = await axios.post(`${API}/account/login/`, formData);
+      localStorage.setItem('token', data.token);
+      return { data, navigate, userEmail: userObj.email };
+  }
 );
 
 

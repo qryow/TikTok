@@ -1,10 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './PremiumStyles/Premium.css';
 import elipse from '../../img/Ellipse1.svg';
 import elipse2 from '../../img/Ellipse2.svg';
+import { useDispatch, useSelector } from 'react-redux';
+import { setPremiumStatus } from '../../store/account/AccountSlice';
 
 const PremiumAcc = () => {
+    const premiumStatus = useSelector((state) => state.account.premiumStatus);
+    const dispatch = useDispatch();
 
+  const handleUpgradeToPremium = () => {
+    dispatch(setPremiumStatus(!premiumStatus));
+  };
 
   return (
     <div className='premium-acc'>
@@ -71,7 +78,7 @@ const PremiumAcc = () => {
             </div>
         </div>
         </div>
-        <button>order</button>
+        <button onClick={handleUpgradeToPremium}>order</button>
     </div>
   );
 };
