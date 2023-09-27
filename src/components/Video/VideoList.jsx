@@ -8,6 +8,7 @@ import { getPosts } from '../../store/posts/postsActions'
 const VideoList = () => {
   const { currentAccount, loading } = useSelector(state => state.account)
   const { posts } = useSelector(state => state.posts)
+  console.log(posts);
 
   const dispatch = useDispatch()
 

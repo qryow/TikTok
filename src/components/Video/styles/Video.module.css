@@ -146,6 +146,13 @@
   width: 100%;
   margin-bottom: 40px;
 }
+.like__text {
+  position: relative;
+  top: -30px;
+  left: 40%;
+  font-family: "Proxima-Nova_bold";
+  font-size: 20px;
+}
 .comment {
   width: 100%;
   margin-bottom: 40px;

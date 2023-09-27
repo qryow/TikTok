@@ -43,8 +43,10 @@ export const likePost = createAsyncThunk(
   async (id, { dispatch }) => {
     console.log('Received id in likePost:', id);
     const config = getAuthConfig();
-    const { data } = await axios.post(`${API}/posts/${id}/like/`, {}, config ? config : null)
+    const { data } = await axios.post(`${API}/posts/${id}/like/`, id, config ? config : null)
     dispatch(getPosts());
     return {data};
   }
 )
+
+

@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
 import style from './style/SearchStyle.module.css'
 
 import logo from '../../img/LogoLight.svg'
@@ -10,7 +11,9 @@ import { NavLink } from 'react-router-dom'
 
 
 const SearchNavbar = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+
 
   return (
     <>
@@ -22,7 +25,11 @@ const SearchNavbar = () => {
             </div>
             
             <div className={style.input__wrapper}>
-              <input className={style.search__input} placeholder='Search' type="text" />
+            <input
+              className={style.search__input}
+              placeholder='Search'
+              type="text"
+            />
 
               <div className={style.search__wrapper} onClick={() => navigate('/search')} >
                 <img className={style.search} src={search} alt="search" onClick={() => navigate('/search')}/>

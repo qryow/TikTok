@@ -32,7 +32,8 @@ const VideoButtons = ({ post }) => {
     <>
       <div className={style.btns__wrapper}>
         <div className={style.btn__wrapper}>
-        <img className={style.like} onClick={() => {handleLikeClick(); dispatch(likePost(post.id)) }} src={post.likes.some(like => like.like) ? likeRed : like} alt="like" />
+          <img className={style.like} onClick={() => {handleLikeClick(); dispatch(likePost(post.id)) }} src={post.likes.some(like => like.like) ? likeRed : like} alt="like" />
+          <p className={style.like__text}> {post.likes.filter(like => like.like).length} </p>
         </div>
         <div className={style.btn__wrapper}>
           <img className={style.comment} src={comment} alt="comment" onClick={() => {setModalActive(true); setIsPlaying(true)}} />
@@ -47,7 +48,7 @@ const VideoButtons = ({ post }) => {
           <img className={style.share} src={share} alt="share" />
         </div>
       </div>
-      <Modal post={post} active={modalActive} setActive={setModalActive} isPlaying={isPlaying} setIsPlaying={setIsPlaying} />
+      <Modal active={modalActive} setActive={setModalActive} post={post} isPlaying={isPlaying} setIsPlaying={setIsPlaying} />
     </>
   )
 }

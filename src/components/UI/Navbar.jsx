@@ -15,6 +15,7 @@ import Modal from './AccountInfoModal'
 const Navbar = () => {
   const [modalActive, setModalActive] = useState(false)
   const { currentAccount } = useSelector(state => state.account);
+  const { isDarkMode, toggleDarkMode } = useDarkMode(); 
 
   const dispatch = useDispatch();
   const navigate = useNavigate()
@@ -26,7 +27,7 @@ const Navbar = () => {
   return (
     <>
       { currentAccount && (
-        <div className={style.navbar}>
+        <div className={isDarkMode ? `${style.navbar} ${style.to__black}` : `${style.navbar}`}>
           <div className={style.container}>
             <div className={style.nav__wrapper}>
               <div className={style.logo__wrapper}>

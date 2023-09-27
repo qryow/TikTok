@@ -26,7 +26,7 @@ const VideoInfo = ({ post }) => {
             <p className={style.video__subtitle}> {post.title} </p>
 
             <div className={style.hashtags}>
-              <a className={style.hashtag} href="/"> {post.categories} </a>
+              <a className={style.hashtag} href={post.categories}> {post.categories} </a>
             </div>
           </div>
 
