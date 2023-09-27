@@ -13,6 +13,9 @@
   background-color: #fff;
   border-bottom: 2px solid #969696;
 }
+.to__black {
+  background-color: #000;
+}
 
 .container {
   width: 95%;
@@ -149,6 +152,9 @@
   }
   .domik{
     height: 27px;
+  }
+  .nav__wrapper {
+    height: 90px;
   }
 
 }

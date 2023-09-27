@@ -7,7 +7,7 @@ export const getPosts = createAsyncThunk(
   'posts/getPosts',
   async (_, { getState }) => {
     const config = getAuthConfig();
-    const { data } = await axios.get(`${API}/post/`, config ? config : null)
+    const { data } = await axios.get(`${API}/posts/`, config ? config : null)
     console.log(data);
     return data;
   }
@@ -30,8 +30,23 @@ export const CreatePost = createAsyncThunk(
     newProduct.append('title', post.title);
     newProduct.append('description', post.description);
     newProduct.append('categories', post.categories);
-    const { data } = await axios.post(`${API}`, newProduct, config ? config : null );
+    newProduct.append('file_video', post.file_video);
+    const { data } = await axios.post(`${API}/posts/`, newProduct, config ? config : null );
     dispatch(getPosts());
+    console.log(data);
     return {data, navigate}
   }
 )
+
+export const likePost = createAsyncThunk(
+  'posts/likePost',
+  async (id, { dispatch }) => {
+    console.log('Received id in likePost:', id);
+    const config = getAuthConfig();
+    const { data } = await axios.post(`${API}/posts/${id}/like/`, id, config ? config : null)
+    dispatch(getPosts());
+    return {data};
+  }
+)
+
+

@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, NavLink } from 'react-router-dom';
-import { CreatePost } from '../../store/posts/postsActions'
+import { CreatePost, getPosts } from '../../store/posts/postsActions'
 
 
 import style from '../CRUD/style/Crud__videoStyles.module.css';
@@ -13,10 +13,27 @@ const Create = () => {
   const [post, setPost] = useState({
     title: '',
     description: '',
-    categories: ''
+    categories: '',
+    file_video: null
   })
+  console.log(post.file_video);
+  const { posts } = useSelector(state => state.posts);
+  console.log(posts);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    dispatch(getPosts());
+  }, []);
+
+  const clearPost = () => {
+    setPost({
+      title: '',
+      description: '',
+      categories: '',
+      file_video: null
+    });
+  };
 
 
     return (
@@ -44,28 +61,32 @@ const Create = () => {
             </div>
           </div> 
 
-
-
-
-
-
-            {/*<div className={styles.create_content}>
-                <div className={styles.video_content}>
-                    <img className={styles.add_icon} src={add} alt='+' />
+            <div className={style.create_content}>
+                
+                <div className={style.input__wrapper}>
+                  { post.file_video ? (
+                    <video className={style.video} src={URL.createObjectURL(post.file_video)} />
+                  ) : (
+                    <>
+                      <p className={style.input__text}>Add some video</p>
+                      <input type="file" accept="video/*" className={style.video__input} onChange={(e) => setPost({ ...post, file_video: e.target.files[0]  })} />
+                    </>
+                  )}
                 </div>
-                <div className={styles.video__platform}>
-                    <h2 className={styles.create_vid}>Create video</h2>
-                    <div className={styles.video_inputs}>
-                        <input type="text" placeholder='Title' className={styles['create-inputs']} onChange={(e) => setPost({ ...post, title: e.target.value })} />
-                        <input type="text" placeholder='Description' className={styles['create-inputs']} onChange={(e) => setPost({ ...post, description: e.target.value })} />
-                        <input type="text" placeholder='Categories' className={styles['create-inputs']} onChange={(e) => setPost({ ...post, categories: e.target.value })} />
+
+                <div className={style.video__platform}>
+                    <h2 className={style.create_vid}>Create video</h2>
+                    <div className={style.video_inputs}>
+                        <input type="text" placeholder='Title' className={style['create-inputs']} onChange={(e) => setPost({ ...post, title: e.target.value })} value={post.title}/>
+                        <input type="text" placeholder='Description' className={style['create-inputs']} onChange={(e) => setPost({ ...post, description: e.target.value })} value={post.description} />
+                        <input type="text" placeholder='Categories' className={style['create-inputs']} onChange={(e) => setPost({ ...post, categories: e.target.value })} value={post.categories} />
                     </div>
-                    <div className={styles.create_btn}>
-                        <button className={styles.create_btns__clear}>Clear</button>
-                        <button className={styles.create_btns__post} onClick={() => dispatch(CreatePost({ post, navigate }))}>Post</button>
+                    <div className={style.create_btn}>
+                        <button className={style.create_btns__clear} onClick={clearPost}>Clear</button>
+                        <button className={style.create_btns__post} onClick={() => dispatch(CreatePost({ post, navigate }))}>Post</button>
                     </div>
                 </div>
-            </div>*/}
+            </div>
         </>
     );
 };

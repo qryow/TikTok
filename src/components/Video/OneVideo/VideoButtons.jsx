@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import style from '../styles/Video.module.css'
 import Modal from '../VideoDetails'
+import { likePost } from '../../../store/posts/postsActions'
+import { useDispatch } from 'react-redux'
 
 import like from '../../../img/Like.svg'
 import likeRed from '../../../img/LikeRed.svg'
@@ -10,11 +12,14 @@ import favoriteYellow from '../../../img/FavoriteYellow.svg'
 import repost from '../../../img/Repost.svg'
 import share from '../../../img/Share.svg'
 
-const VideoButtons = () => {
+const VideoButtons = ({ post }) => {
+  console.log(post);
   const [liked, setLiked] = useState(false);
   const [favorited, setFavorite] = useState(false);
   const [modalActive, setModalActive] = useState(false)
   const [isPlaying, setIsPlaying] = useState(false);
+
+  const dispatch = useDispatch()
 
   const handleLikeClick = () => {
     setLiked(!liked);
@@ -27,7 +32,8 @@ const VideoButtons = () => {
     <>
       <div className={style.btns__wrapper}>
         <div className={style.btn__wrapper}>
-        <img className={style.like} onClick={handleLikeClick} src={liked ? likeRed : like} alt="like" />
+          <img className={style.like} onClick={() => {handleLikeClick(); dispatch(likePost(post.id)) }} src={post.likes.some(like => like.like) ? likeRed : like} alt="like" />
+          <p className={style.like__text}> {post.likes.filter(like => like.like).length} </p>
         </div>
         <div className={style.btn__wrapper}>
           <img className={style.comment} src={comment} alt="comment" onClick={() => {setModalActive(true); setIsPlaying(true)}} />
@@ -42,7 +48,7 @@ const VideoButtons = () => {
           <img className={style.share} src={share} alt="share" />
         </div>
       </div>
-      <Modal active={modalActive} setActive={setModalActive} isPlaying={isPlaying} setIsPlaying={setIsPlaying} />
+      <Modal active={modalActive} setActive={setModalActive} post={post} isPlaying={isPlaying} setIsPlaying={setIsPlaying} />
     </>
   )
 }
