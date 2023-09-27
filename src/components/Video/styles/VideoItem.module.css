@@ -211,3 +211,31 @@
 .input::placeholder {
   font-size: 25px;
 }
+
+
+
+
+/*! Adaptive */
+@media all and (max-width: 2000px) {
+  /*.wrap {
+    height: 70%;
+  }*/
+}
+@media all and (max-width: 1900px) {
+  .wrap {
+    height: 80%;
+  }
+}
+@media all and (max-width: 1100px) {
+  .wrap {
+    height: 75%;
+  }
+  .video__item {
+    height: 90vh;
+  }
+}
+@media all and (max-width: 800px) {
+  .wrap {
+    height: 65%;
+  }
+}

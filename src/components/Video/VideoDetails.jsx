@@ -8,7 +8,7 @@ import videoFile from '../../videos/video.mp4';
 import play from '../../img/play.svg';
 import logo from '../../img/Profile.svg'
 
-const VideoDetails = ({active, setActive, isPlaying, setIsPlaying}) => {
+const VideoDetails = ({active, setActive, isPlaying, setIsPlaying, post}) => {
   const videoRef = useRef();
   const clickRef = useRef();
   const [videoProgress, setVideoProgress] = useState(0);
@@ -80,7 +80,7 @@ const VideoDetails = ({active, setActive, isPlaying, setIsPlaying}) => {
           {isPlaying ? (
             <div className={style.video__wrapper}>
               <video autoPlay loop className={style.video} ref={videoRef} onClick={PlayPause}>
-                <source src={videoFile} type="video/mp4" />
+                <source src={post.file_video} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
                 <div className={style.navigation}>
@@ -93,7 +93,7 @@ const VideoDetails = ({active, setActive, isPlaying, setIsPlaying}) => {
             <>
               <div className={style.video__wrapper}>
                 <video className={style.video} ref={videoRef}>
-                  <source src={videoFile} type="video/mp4" />
+                  <source src={post.file_video} type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
                 <img className={style.play} src={play} alt="play" onClick={PlayPause} />
@@ -109,17 +109,11 @@ const VideoDetails = ({active, setActive, isPlaying, setIsPlaying}) => {
               </div>
 
               <div className={style.info__text}>
-                <h4 className={style.acc__name}>masteroogway</h4>
-                <p className={style.video__subtitle}>Why is it so small?</p>
+                <h4 className={style.acc__name}> {post.user} </h4>
+                <p className={style.video__subtitle}> {post.title} </p>
 
                 <div className={style.hashtags}>
-                  <a className={style.hashtag} href="/">#car </a>
-                  <a className={style.hashtag} href="/">#jdm </a>
-                  <a className={style.hashtag} href="/">#japan </a>
-                  <a className={style.hashtag} href="/">#skyline </a>
-                  <a className={style.hashtag} href="/">#gtr34 </a>
-                  <a className={style.hashtag} href="/">#nissan </a>
-                  <a className={style.hashtag} href="/">#edit </a>
+                  <a className={style.hashtag} href="/"> {post.categories} </a>
                 </div>
               </div>
                 

@@ -5,14 +5,14 @@ import VideoInfo from './OneVideo/VideoInfo'
 import Video from './OneVideo/Video'
 import VideoButtons from './OneVideo/VideoButtons'
 
-const VideoItem = () => {
+const VideoItem = ({ post }) => {
   return (
     <div className={style.video__item}>
       <div className={style.video__item_wrapper}>
-        <VideoInfo />
+        <VideoInfo post={post} />
         <div className={style.wrap}>
-          <Video />
-          <VideoButtons />
+          <Video post={post} />
+          <VideoButtons post={post} />
         </div>
       </div>
     </div>

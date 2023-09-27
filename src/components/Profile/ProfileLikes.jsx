@@ -1,14 +1,34 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import style from './ProfileStyle/ProfileStyle.module.css';
 import { NavLink } from 'react-router-dom';
 import ProfileNavbar from './ProfileNavbar'
 import Subscriptions from '../UI/subscriptions/SubscriptionsList'
 import EditProfile from './EditProfile';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { getPosts } from '../../store/posts/postsActions';
 
 const ProfileLikes = () => {
   const [modalActive, setModalActive] = useState(false)
   const { currentAccount } = useSelector(state => state.account)
+  const { posts } = useSelector(state => state.posts)
+  console.log(posts);
+
+ // Объявите переменную за пределами блока if
+
+ let likedPosts = [];
+
+ if (Array.isArray(posts)) {
+   likedPosts = posts.filter((post) => post.likes && post.likes.some((like) => like.like === true));
+ }
+ 
+ console.log(likedPosts);
+ 
+ 
+  const dispatch = useDispatch();
+  
+  useEffect(() => {
+    dispatch(getPosts());
+  }, []);
 
   return (
     <>
@@ -62,6 +82,9 @@ const ProfileLikes = () => {
               Likes
             </NavLink>
           </div>
+
+          <p></p>
+
           
         </div>
       </div>

@@ -1,17 +1,21 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import style from './styles/UIComponents.module.css'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { getProfile } from '../../store/account/AccountAction'
+import { useSelector, useDispatch } from 'react-redux'
+import { useDarkMode } from '../DarkMode/DarkMode'; 
 
 import logo from '../../img/LogoLight.svg'
 import search from '../../img/Search.svg'
 import inbox from '../../img/Inbox.svg'
 import add from '../../img/AddVideo.svg'
-import { useSelector, useDispatch } from 'react-redux'
+
+import Modal from './AccountInfoModal'
 
 const Navbar = () => {
+  const [modalActive, setModalActive] = useState(false)
   const { currentAccount } = useSelector(state => state.account);
-  console.log(currentAccount);
+  const { isDarkMode, toggleDarkMode } = useDarkMode(); 
 
   const dispatch = useDispatch();
   const navigate = useNavigate()
@@ -23,7 +27,7 @@ const Navbar = () => {
   return (
     <>
       { currentAccount && (
-        <div className={style.navbar}>
+        <div className={isDarkMode ? `${style.navbar} ${style.to__black}` : `${style.navbar}`}>
           <div className={style.container}>
             <div className={style.nav__wrapper}>
               <div className={style.logo__wrapper}>
@@ -48,15 +52,16 @@ const Navbar = () => {
                   <img className={style.add_video} src={add} alt="add video" />
                 </div>
                 <div className={style.profile__wrapper} >
-                  <NavLink to="/profile">
+                  <div  onClick={() => setModalActive(true)}>
                   <img className={style.profile__logo} src={ currentAccount.avatar } alt='profile' />
-                  </NavLink>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div> 
       )}
+      <Modal active={modalActive} setActive={setModalActive} />
     </>
   )
 }
