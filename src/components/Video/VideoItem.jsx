@@ -1,6 +1,5 @@
 import React from 'react'
 import style from './styles/VideoItem.module.css'
-
 import VideoInfo from './OneVideo/VideoInfo'
 import Video from './OneVideo/Video'
 import VideoButtons from './OneVideo/VideoButtons'

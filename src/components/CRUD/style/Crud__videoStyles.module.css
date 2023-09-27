@@ -10,8 +10,11 @@
   width: 100%;
   z-index: 1;
   height: auto;
-  background-color: #fff;
   border-bottom: 2px solid #969696;
+}
+
+.navbar_lighter{
+    background-color: black;
 }
 .container {
   width: 95%;
@@ -56,6 +59,9 @@
     margin-top: 13vh;
     height: 86vh;
 }
+.create_content_lighter{
+    background-color: black;
+}
 .video_content{
     width: 25%;
     height: 75vh;
@@ -76,6 +82,10 @@
 .create_vid{
     font-size: 75px;
     font-family: 'Proxima-Nova_bold';
+}
+
+.create_vid_lighter{
+    color: white;
 }
 .create-inputs{
     height: 6vh;
@@ -131,6 +141,9 @@
   left: 26%;
   font-family: 'Proxima-Nova_bold';
   font-size: 25px;
+}
+.input__text_lighter{
+    color: white;
 }
 .video__input {
   width: 100%;

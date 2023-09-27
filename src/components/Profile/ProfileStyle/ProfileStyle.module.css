@@ -29,6 +29,10 @@ input::placeholder {
     border-radius: 5px;
 }
 
+.edit__profile__btn_lighter{
+  border: 1px solid white;
+}
+
 .profile__wrapper {
   position: relative;
   width: 100%;
@@ -38,6 +42,17 @@ input::placeholder {
   justify-content: flex-end;
   pointer-events: none;
 }
+
+.profile__wrapper_lighter{
+  background-color: black;
+  color: white;
+}
+
+.profile__black{
+  color: white;
+  background-color: #000000;
+}
+
 .profile__content {
   width: 80%;
   height: 25%;
@@ -61,6 +76,10 @@ input::placeholder {
   width: 70%;
   height: 80%;
   margin-left: 20px;
+}
+
+.premiumIcon{
+  display: flex;
 }
 .profile__name {
   font-family: "Proxima-Nova_bold";
@@ -103,6 +122,10 @@ input::placeholder {
   font-family: 'Proxima-Nova_bold';
   font-size: 30px;
   text-decoration: none;
+}
+
+.nav__title_lighter{
+  color: white;
 }
 
 
