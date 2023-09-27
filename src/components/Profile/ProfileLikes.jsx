@@ -1,20 +1,41 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import style from './ProfileStyle/ProfileStyle.module.css';
 import { NavLink } from 'react-router-dom';
 import ProfileNavbar from './ProfileNavbar'
 import Subscriptions from '../UI/subscriptions/SubscriptionsList'
 import EditProfile from './EditProfile';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { getPosts } from '../../store/posts/postsActions';
+import { useDarkMode } from '../DarkMode/DarkMode'; 
+import PremiumIcon from '../Premium/PremiumIcon';
 
 const ProfileLikes = () => {
   const [modalActive, setModalActive] = useState(false)
   const { currentAccount } = useSelector(state => state.account)
+  const { posts } = useSelector(state => state.posts)
+  console.log(posts);
+  const { isDarkMode, toggleDarkMode } = useDarkMode(); 
+
+ let likedPosts = [];
+
+ if (Array.isArray(posts)) {
+   likedPosts = posts.filter((post) => post.likes && post.likes.some((like) => like.like === true));
+ }
+ 
+ console.log(likedPosts);
+ 
+ 
+  const dispatch = useDispatch();
+  
+  useEffect(() => {
+    dispatch(getPosts());
+  }, []);
 
   return (
     <>
       <ProfileNavbar />
       <Subscriptions />
-      <div className={style.profile__wrapper}>
+      <div className={isDarkMode ? `${style.profile__wrapper} ${style.profile__wrapper_lighter}` : `${style.profile__wrapper}`}>
         <div className={style.profile__content}>
 
 
@@ -25,7 +46,10 @@ const ProfileLikes = () => {
               </div>
 
               <div className={style.profile__info_content}>
+              <div className={style.premiumIcon}>
                 <h4 className={style.profile__name}> { currentAccount.name } </h4>
+                <PremiumIcon />
+                </div>
                 
                 <div className={style.subscriptions}>
                   <div className={style.following}>
@@ -43,7 +67,7 @@ const ProfileLikes = () => {
               </div>
 
               <div className={style.btn__wrapper}>
-                <button className={style.edit__profile__btn} onClick={() => setModalActive(true)}>Edit profile</button>
+                <button className={isDarkMode ? `${style.edit__profile__btn} ${style.edit__profile__btn_lighter}` : `${style.edit__profile__btn}`} onClick={() => setModalActive(true)}>Edit profile</button>
               </div>
             </div>
           )}
@@ -58,10 +82,13 @@ const ProfileLikes = () => {
             <NavLink className={style.nav__title} to="/profile-reposts">
               Reposts
             </NavLink>
-            <NavLink className={style.nav__title} to="/profile-likes">
+            <NavLink className={isDarkMode ? `${style.nav__title} ${style.nav__title_lighter}` : `${style.nav__title}`} to="/profile-likes">
               Likes
             </NavLink>
           </div>
+
+          <p></p>
+
           
         </div>
       </div>

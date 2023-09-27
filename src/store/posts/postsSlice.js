@@ -1,11 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getPosts, CreatePost } from "./postsActions";
+import { getPosts, CreatePost, } from "./postsActions";
 
 const PostsSlice = createSlice({
   name: 'posts',
   initialState: {
     posts: [],
-    loading: false
+    loading: false,
+    search: ''
   },
   reducers: {},
   extraReducers: (builder) => {
@@ -15,7 +16,7 @@ const PostsSlice = createSlice({
     })
     .addCase(getPosts.fulfilled, (state, action) => {
       state.loading = false;
-      state.posts = action.payload.results
+      state.posts = action.payload;
     })
     .addCase(getPosts.rejected, (state) => {
       state.loading = false

@@ -16,7 +16,6 @@ export const isUserLogin = () => {
 
 export const getAuthConfig = () => {
     const token = JSON.parse(localStorage.getItem('token'));
-    console.log(token);
     if(!token) return false;
     const Authorization = `Token ${token.token}`;
     const config = {
@@ -24,6 +23,5 @@ export const getAuthConfig = () => {
           Authorization
         }
     };
-    console.log(config);
     return config;
 };

@@ -13,6 +13,11 @@
   background-color: #fff;
   border-bottom: 2px solid #969696;
 }
+.to__black {
+  background-color: #000;
+  color: white;
+}
+
 
 .container {
   width: 95%;
@@ -44,6 +49,9 @@
   font-family: 'Proxima-Nova_bold';
   font-size: 35px;
   text-decoration: none;
+}
+.to__white {
+  color: #fff !important;
 }
 .navbar_profil{
   display: block;
@@ -149,6 +157,9 @@
   }
   .domik{
     height: 27px;
+  }
+  .nav__wrapper {
+    height: 90px;
   }
 
 }
