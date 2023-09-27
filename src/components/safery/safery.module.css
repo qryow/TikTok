@@ -1,0 +1,325 @@
+@font-face {
+    font-family: "Proxima-Nova_bold";
+    src: url("../../fonts/ProximaNova/proximanova_bold.otf") format("truetype");
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Proxima-Nova_exsteabold";
+    src: url("../../fonts/ProximaNova/proximanova_light.otf") format("truetype");
+    font-style: normal;
+  }
+
+.safary{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.safary__navbar{
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+    border-bottom: 1px solid rgb(219, 219, 219);
+}
+.safary__navbar img{
+    height: 50px;
+}
+.safary__navbar_left{
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;list-style-type: none;
+    width: 45%;
+}
+.safary__navbar_left li:hover{
+    border-bottom: 1px solid palevioletred;
+    transition: 0.3px;
+}
+.safary__navbar_left input{
+    width: 190px;
+    height: 35px;
+    border: none;
+    border-radius: 15px;
+    background-color: rgb(234, 234, 234);
+    padding-left: 20px;
+    font-size: 20px;
+}
+.safary__top_content{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.safary__top_content img{
+    width: 97%;
+}
+.safary__top_content h2{
+    position: absolute;
+    font-size: 45px;
+    color: #fff;
+}
+
+.scroll__platform button:hover{
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3  ); 
+    transition: 1s;
+}
+
+.scroll__platform {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden; 
+    padding: 10px; 
+    background-color: #f0f0f0; 
+    height: 13vh;
+    align-items: center;
+    width: 97%;
+  }
+  
+  
+  .scroll__platform button {
+    flex: 0 0 auto; 
+    margin-right: 10px; 
+    padding: 10px;
+    border-radius: 20px; 
+    border: none; 
+    background-color: #ffffff; 
+    color: #000000; 
+    height: 45px    ;
+  }
+  
+  
+  .btn_1 {
+    width: 200px; 
+  }
+  
+  .btn_2 {
+    width: 300px; 
+  }
+  
+  .btn_3 {
+    width: 400px; 
+  }
+  
+  .safary__dop_infa{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .safary__dop_infa h2{
+    font-size: 60px;
+    font-family:  "Proxima-Nova_bold";
+  }
+  .safary__dop_infa p{
+    font-family: "Proxima-Nova_exsteabold";
+    font-size: 20px;
+    color: gray;
+  }
+  .management__block{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;padding-top: 100px;
+    flex-wrap: wrap;
+    width: 97%; 
+  }
+  .management__block button{
+    width: 300px;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 01  ); 
+    border: none;
+    border-radius: 20px;
+    font-size: 30px;
+    margin-bottom: 30px;
+    margin: 20px
+  }
+  .management__block img{
+    width: 90%;
+  }
+  .video__content{
+    width: 80%;
+    height: auto;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    box-shadow: 0 0 20px rgb(158, 158, 158); 
+    border-radius: 10px;
+    padding: 30px;
+  }
+  .video__left_content{
+    width: 45%;
+    height: 88%;
+  }
+  .video__left_content h2{
+    font-size: 57px;
+    font-family:  "Proxima-Nova_bold";
+
+  }
+  .video__left_content p{
+    font-size: 18px;
+    font-family: "Proxima-Nova_exsteabold";
+    color: #616161;
+  }
+  .video__left_content button{
+    border: none;
+    border-radius: 3px;
+    background-color: rgb(255, 41, 77);
+    width: 50%;
+    height: 40px;
+    margin-top: 15px;
+    color: #fff;
+  }
+  .video{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    height: 100%;
+    width: 40%;
+  }
+  .video_content{
+    height: 100%;
+  }
+  .news{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding-top: 20px;
+}
+
+.news__blok{
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .news__blok button{
+    width: 370px;
+    height: 470px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 0px;
+    border: none;
+    margin-bottom: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 100px rgb(158, 158, 158); 
+}
+    .news__blok img{
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        width: 100%;
+        height: auto;
+    }
+.button_txt_content{
+    display: flex;
+    justify-content: space-around;
+    height: 20%;
+    flex-direction: column  ;
+}
+  @media (max-width:1250px){
+    .video__content{
+        flex-direction: column-reverse;
+        align-items: center;
+        padding: 10px;
+    }
+    .video__left_content h2{
+        font-size: 45px;
+    }
+    .video__left_content{
+        width: 90%;
+    }
+    .video{
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+  }
+  @media (max-width:870px){
+    .safary__navbar_left{
+        width: 60%;
+    }
+  }
+  @media (max-width:670px){
+    .safary__navbar_left{
+        width: 70%;
+    }
+    .safary__navbar img{
+        height: 30px;
+    }
+    .safary__dop_infa h2{
+        font-size: 40px;
+    }
+    .safary__dop_infa p{
+        font-size: 17px;
+    }
+    .safary__dop_infa{
+        width: 60%;
+    }
+    .video__left_content h2{
+        font-size: 40px;
+    }
+  }
+  @media (max-width:570px){
+    .safary__dop_infa{
+        width: 70%;
+    }
+    .a{
+        display: none;
+    }
+    .v{
+        display: none;
+    }
+    .safary__navbar_left{
+        width: 50%;
+    }
+    .safary__top_content h2{
+        font-size: 30px;
+    }
+    .video__left_content h2{
+        font-size: 33px;
+    }
+    .management__block button{
+        width: 270px;
+        font-size: 23px;
+    }
+}
+@media (max-width:470px){
+    .safary__navbar_left{
+        width: 30%;
+    }
+    .safary__top_content h2{
+        font-size: 30px;
+    }
+    .as{
+        display: none;
+    }
+    .video__left_content h2{
+        font-size: 26px;
+    }
+    .video__left_content p{
+        font-size: 15px;
+    }
+}
+
+@media (max-width:370px){
+    .video__left_content h2{
+        font-size: 21px;
+    }
+    .news__blok button{
+        height: 400px;
+        justify-content: space-around;
+    }
+}

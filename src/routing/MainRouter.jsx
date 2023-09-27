@@ -24,6 +24,7 @@ import ProfileFavorites from '../components/Profile/ProfileFavourites'
 import ProfileReposts from '../components/Profile/ProfileReposts'
 import ProfileLikes from '../components/Profile/ProfileLikes'
 import Opasiti from '../components/opasiti sites/Opasiti'
+import Safery from '../components/safery/Safery'
 
 const MainRouter = () => {
   return (
@@ -52,6 +53,7 @@ const MainRouter = () => {
       <Route path='/profile-likes' element={<ProfileLikes/>}/>
 
       <Route path='/opasiti' element={<Opasiti/>}/>
+      <Route path='/safury' element={<Safery/>} />
     </Routes>
   )
 }
