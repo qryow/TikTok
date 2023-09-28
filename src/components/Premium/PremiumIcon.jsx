@@ -1,7 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import icon from '../../img/premiumIcon.svg';
-
+import icon from '../../img/premiumIcon.svg'
 const PremiumIcon = () => {
     const premiumStatus = useSelector((state) => state.account.premiumStatus);
 

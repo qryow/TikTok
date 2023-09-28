@@ -8,6 +8,19 @@
     background-color: black;
   }
 
+  .btn {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    border: 2px solid #337099;
+    border-radius: 10px;
+    width: 100px;
+    height: 40px;
+    background: none;
+    color: white;
+    cursor: pointer;
+  }
+
   .elipse{
     position: absolute;
     bottom: 0;
