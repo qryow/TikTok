@@ -7,6 +7,7 @@ import Picker from '@emoji-mart/react'
 import videoFile from '../../videos/video.mp4';
 import play from '../../img/play.svg';
 import logo from '../../img/Profile.svg'
+import { useSelector } from 'react-redux';
 
 const VideoDetails = ({active, setActive, isPlaying, setIsPlaying, post}) => {
   const videoRef = useRef();
@@ -14,6 +15,16 @@ const VideoDetails = ({active, setActive, isPlaying, setIsPlaying, post}) => {
   const [videoProgress, setVideoProgress] = useState(0);
   const [showEmoji, setShowEmoji] = useState(false)
   const [text, setText] = useState("")
+
+  const { posts } = useSelector(state => state.posts)
+  //console.log(posts.results);
+  console.log(post.comment);
+
+  let comment = [];
+  if (Array.isArray(post.comment)) {
+    comment = post.comment
+  }
+  console.log(comment);
 
   useEffect(() => {
     const videoElement = videoRef.current;
@@ -119,9 +130,7 @@ const VideoDetails = ({active, setActive, isPlaying, setIsPlaying, post}) => {
                 
             </div>
 
-            <div className={style.comments__wrapper}>
-              
-              <div className={style.one__comment}>
+            {/*<div className={style.one__comment}>
                 <div className={style.comment__logo_wrapper}>
                   <img className={style.comment__logo} src={logo} alt="logo" />
                 </div>
@@ -131,105 +140,24 @@ const VideoDetails = ({active, setActive, isPlaying, setIsPlaying, post}) => {
                   </h4>
                   <p className={style.comment__text}> Why it is so small ?</p>
                 </div>
-              </div>
+              </div>*/}
 
-              <div className={style.one__comment}>
-                <div className={style.comment__logo_wrapper}>
-                  <img className={style.comment__logo} src={logo} alt="logo" />
-                </div>
-                <div className={style.comment__content}>
-                  <h4 className={style.comment__title}>
-                    qryow
-                  </h4>
-                  <p className={style.comment__text}> Why it is so small ?</p>
-                </div>
-              </div>
 
-              <div className={style.one__comment}>
-                <div className={style.comment__logo_wrapper}>
-                  <img className={style.comment__logo} src={logo} alt="logo" />
+              {post && post.length > 0 && (
+                <div className={style.comments__wrapper}>
+                  {post.map((comment) => (
+                    <div className={style.one__comment} key={comment.id}>
+                      <div className={style.comment__logo_wrapper}>
+                        <img className={style.comment__logo} src={logo} alt="логотип" />
+                      </div>
+                      <div className={style.comment__content}>
+                        <h4 className={style.comment__title}>{comment.author}</h4>
+                        <p className={style.comment__text}>{comment.comment}</p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-                <div className={style.comment__content}>
-                  <h4 className={style.comment__title}>
-                    qryow
-                  </h4>
-                  <p className={style.comment__text}> Why it is so small ?</p>
-                </div>
-              </div>
-
-              <div className={style.one__comment}>
-                <div className={style.comment__logo_wrapper}>
-                  <img className={style.comment__logo} src={logo} alt="logo" />
-                </div>
-                <div className={style.comment__content}>
-                  <h4 className={style.comment__title}>
-                    qryow
-                  </h4>
-                  <p className={style.comment__text}> Why it is so small ?</p>
-                </div>
-              </div>
-
-              <div className={style.one__comment}>
-                <div className={style.comment__logo_wrapper}>
-                  <img className={style.comment__logo} src={logo} alt="logo" />
-                </div>
-                <div className={style.comment__content}>
-                  <h4 className={style.comment__title}>
-                    qryow
-                  </h4>
-                  <p className={style.comment__text}> Why it is so small ?</p>
-                </div>
-              </div>
-
-              <div className={style.one__comment}>
-                <div className={style.comment__logo_wrapper}>
-                  <img className={style.comment__logo} src={logo} alt="logo" />
-                </div>
-                <div className={style.comment__content}>
-                  <h4 className={style.comment__title}>
-                    qryow
-                  </h4>
-                  <p className={style.comment__text}> Why it is so small ?</p>
-                </div>
-              </div>
-
-              <div className={style.one__comment}>
-                <div className={style.comment__logo_wrapper}>
-                  <img className={style.comment__logo} src={logo} alt="logo" />
-                </div>
-                <div className={style.comment__content}>
-                  <h4 className={style.comment__title}>
-                    qryow
-                  </h4>
-                  <p className={style.comment__text}> Why it is so small ?</p>
-                </div>
-              </div>
-
-              <div className={style.one__comment}>
-                <div className={style.comment__logo_wrapper}>
-                  <img className={style.comment__logo} src={logo} alt="logo" />
-                </div>
-                <div className={style.comment__content}>
-                  <h4 className={style.comment__title}>
-                    qryow
-                  </h4>
-                  <p className={style.comment__text}> Why it is so small ?</p>
-                </div>
-              </div>
-
-              <div className={style.one__comment}>
-                <div className={style.comment__logo_wrapper}>
-                  <img className={style.comment__logo} src={logo} alt="logo" />
-                </div>
-                <div className={style.comment__content}>
-                  <h4 className={style.comment__title}>
-                    qryow
-                  </h4>
-                  <p className={style.comment__text}> Why it is so small ?</p>
-                </div>
-              </div>
-
-            </div>
+              )}
 
             <div className={style.add__comment}>
 

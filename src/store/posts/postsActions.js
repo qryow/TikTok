@@ -31,7 +31,7 @@ export const CreatePost = createAsyncThunk(
     newProduct.append('description', post.description);
     newProduct.append('categories', post.categories);
     newProduct.append('file_video', post.file_video);
-    const { data } = await axios.post(`${API}/posts/`, newProduct, config ? config : null );
+    const { data } = await axios.post(`${API}/posts/create/`, newProduct, config ? config : null );
     dispatch(getPosts());
     console.log(data);
     return {data, navigate}
@@ -50,3 +50,12 @@ export const likePost = createAsyncThunk(
 )
 
 
+export const getComments = createAsyncThunk(
+  'posts/getComments',
+  async (id, { getState }) => {
+    const config = getAuthConfig();
+    const { data } = await axios.get(`${API}/comment/`, config ? config : null)
+    console.log(data);
+    return data;
+  }
+)

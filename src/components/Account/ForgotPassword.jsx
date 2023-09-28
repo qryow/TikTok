@@ -38,7 +38,7 @@ const ForgotPassword = () => {
       {status === 'error' ? (
         <>
           <div className={style.error}>
-            <h3 className={style.error__text}>Some error occured!   </h3>
+            <h3 className={style.error__text}>Some error occured!</h3>
             <br />
             <button className={style.error__btn} onClick={() => dispatch(clearStatus())}>Try again</button>
           </div>
