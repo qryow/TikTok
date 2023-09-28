@@ -41,7 +41,7 @@ const accountSlice = createSlice({
         .addCase(loginUser.fulfilled, (state, action) => {
             state.currentAccount = action.payload.userEmail;
             addDataToLocalStorage(action.payload.userEmail, action.payload.data);
-            action.payload.navigate('/');
+            action.payload.navigate('/homepage');
         })
         .addCase(loginUser.rejected, (state) => {
             state.status = 'error';

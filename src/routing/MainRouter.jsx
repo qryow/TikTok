@@ -32,7 +32,7 @@ import Accessibility from '../components/accessibility/Accessibility'
 const MainRouter = () => {
   return (
     <Routes>
-      <Route path='/register' element={<RegisterPage />} />
+      <Route path='/' element={<RegisterPage />} />
       <Route path='/activate' element={<ActivatePage />} />
       <Route path='/login' element={<LoginPage />} />
       <Route path='/logout' element={<LogoutPage />} />
@@ -41,7 +41,7 @@ const MainRouter = () => {
       <Route path='/forgot-password' element={<ForgotPasswordPage />} />
       <Route path='/forgot-password-complete' element={<ForgotPasswordCompletePage />} />
 
-      <Route path='/' element={<RecsPage />} />
+      <Route path='/homepage' element={<RecsPage />} />
       <Route path='/following' element={<FollowingPage />} />
       <Route path='/search' element={<SearchPage />} />
       {/*<Route path='/acount' element={<AcountPage/>}/>
