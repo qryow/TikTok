@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getPosts, CreatePost, } from "./postsActions";
+import { getPosts, CreatePost, getComments, } from "./postsActions";
 
 const PostsSlice = createSlice({
   name: 'posts',
@@ -23,6 +23,10 @@ const PostsSlice = createSlice({
     })
     .addCase(CreatePost.fulfilled, (_, action) => {
       action.payload.navigate(`/`)
+    })
+    .addCase(getComments.fulfilled, (state, action) => {
+      state.loading = false;
+      state.posts = action.payload;
     })
   }
 })
