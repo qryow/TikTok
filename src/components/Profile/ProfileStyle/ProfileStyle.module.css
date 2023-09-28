@@ -1,161 +1,310 @@
 @font-face {
-    font-family: "Proxima-Nova_bold";
-    src: url("../../../fonts/ProximaNova/proximanova_bold.otf") format("truetype");
-    font-style: normal;
+  font-family: "Proxima-Nova_bold";
+  src: url("../../../fonts/ProximaNova/proximanova_bold.otf") format("truetype");
+  font-style: normal;
+}
+@font-face {
+  font-family: "Proxima-Nova_extra-bold";
+  src: url("../../../fonts/ProximaNova/proximanova_extrabold.otf") format("truetype");
+  font-style: normal;
+}
+@font-face {
+  font-family: "Proxima-Nova_regular";
+  src: url("../../../fonts/ProximaNova/proximanova_regular.ttf") format("truetype");
+  font-style: normal;
 }
 
-* {
-    font-family: 'Proxima-Nova_bold';
-}
-.navbar{
-    display: block;
-}
-.profile_left_txt {
-    font-size: 25px;
-    margin-right: 20px;
+input::placeholder {
+  font-size: 16px;
+  font-family: "Proxima-Nova_regular";
 }
 
-.subcribe__block {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-right: 100px;
-    margin-top: 15px;
-}
-
-.profile__left_content {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 24%;
-    padding-top: 20px;
-}
-
-.profile__platform {
-    width: 100%;
-    height: 100%;
-    display: flex;
-}
-
-.subcribe__name {
-    margin-right: 20px;
-}
-
-.profile__right_content {
-    width: 60%;
-}
-
-.profile_content {
-    display: flex;
-    width: 100%;
-}
-
-.profile_left__content {
-    width: 70%;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-}
-
-.editprofil {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.editprofil h2 {
-    font-size: 39px;
-}
-
-.editprofil button {
-    width: 160px;
-    height: 38px;
+.edit__profile__btn {
+    width: 190%;
+    height: 50px;
+    /*margin-top: 20px;*/
     font-size: 20px;
     background-color: inherit;
     border: 1px solid black;
     border-radius: 5px;
 }
 
-.profil_logo {
-    height: 180px;
+.edit__profile__btn_lighter{
+  border: 1px solid white;
 }
 
-.fol_lik_flow {
-    display: flex;
+.profile__wrapper {
+  position: relative;
+  width: 100%;
+  margin-top: 13vh;
+  height: 87vh;
+  display: flex;
+  justify-content: flex-end;
+  pointer-events: none;
 }
 
-.fol_lik_flow h3 {
-    font-family: small;
-    margin-right: 20px;
+.profile__wrapper_lighter{
+  background-color: black;
+  color: white;
 }
 
-.profil_container {
-    display: flex;
-    flex-direction: column;
+.profile__black{
+  color: white;
+  background-color: #000000;
 }
-.navLinks{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    font-size: 30px;
+
+.profile__content {
+  width: 80%;
+  height: 25%;
+  pointer-events: all;
 }
-.navLinks{
-    margin-right: 20px;
+.profile__info {
+  width: 60%;
+  margin-left: 30px;
+  height: 100%;;
+  display: flex;
+  align-items: center;
 }
-.subcribe__logo{
-    height: 60px;
+.profile__logo_wrapper {
+  width: 20%;
 }
-.navlink{
-    margin-right: 20px;
+.profile__logo {
+  width: 100%;
+  border-radius: 50%;
 }
-.px600navbar{
-    display: none;
-    padding: 5px;
+.profile__info_content {
+  width: 70%;
+  height: 80%;
+  margin-left: 20px;
 }
-.profilelogo{
-    height: 28px;
+
+.premiumIcon{
+  display: flex;
 }
-.logo_tiktok{
-    height: 45px;
+.profile__name {
+  font-family: "Proxima-Nova_bold";
+  font-size: 40px;
 }
-.new_profil_platform{
-    display: none;
+
+.subscriptions {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  height: 30%;
+}
+.following {
+  width: 35%;
+}
+.count {
+  font-family: "Proxima-Nova_bold";
+  font-size: 25px;
+}
+.follow__text {
+  font-family: "Proxima-Nova_regular";
+  font-size: 25px;
+}
+
+.profile__desc {
+  margin-top: 20px;
+  font-family: "Proxima-Nova_regular";
+  font-size: 18px;
+}
+
+.navigation {
+  width: 100%;
+  margin-top: 10px;
+  height: 30%;
+  border-bottom: 2px solid #696969;
+}
+.nav__title {
+  margin-left: 40px;
+  margin-right: 80px;
+  font-family: 'Proxima-Nova_bold';
+  font-size: 30px;
+  text-decoration: none;
+}
+
+.nav__title_lighter{
+  color: white;
+}
+
+
+/*!!!!      MODAL      */
+.modal {
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.2s;
+  z-index: 1;
+}
+.modal.active {
+  opacity: 1;
+  pointer-events: all;
+}
+.modal__content {
+  padding: 30px;
+  border-radius: 15px;
+  background-color: #fff;
+  width: 50%;
+  transform: scale(0.5);
+  transition: 0.4s all;
+}
+.modal__content.active {
+  transform: scale(1);
+}
+
+.edit__title {
+  font-family: "Proxima-Nova_extra-bold";
+  font-size: 45px;
+}
+
+.edit__fields {
+  width: 100%;
+  height: 90%;
+  margin-left: 90px;
+}
+.edit__field_title {
+  width: 20%;
+  margin-right: 50px;
+  font-family: "Proxima-Nova_bold";
+  font-size: 24px;
+  color: #161722;
+}
+
+.edit__logo {
+  width: 100%;
+  height: 10%;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+.img__wrapper img{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+.img {
+  width: 100%;
+  border-radius: 50%;
+}
+.edit__name {
+  width: 100%;
+  height: 10%;
+  margin-top: 40px;
+  display: flex;
+}
+.name__wrapper {
+  width: 50%;
+}
+.name__subtitle {
+  font-family: "Proxima-Nova_regular";
+  font-size: 15px;
+}
+.name__input {
+  width: 100%;
+  height: 45px;
+  margin-bottom: 15px;
+  padding-left: 10px;
+  font-family: "Proxima-Nova_extra-bold";
+  font-size: 18px;
+  color: #161722;
+  border: 2px solid #757575; 
+}
+.edit__desc {
+  width: 100%;
+  height: 20%;
+  margin-top: 70px;
+  display: flex;
+}
+.desc__textarea {
+  width: 50%;
+  height: 100px;
+  padding-top: 10px;
+  padding-left: 10px;
+  font-family: "Proxima-Nova_regular";
+  font-size: 16px;
+  color: #161722;
+  border: 2px solid #757575;
+  resize: none;
+}
+.edit__social {
+  width: 100%;
+  height: 10%;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+.social__input {
+  width: 50%;
+  height: 35px;
+  padding-left: 10px;
+  font-family: "Proxima-Nova_regular";
+  font-size: 18px;
+  color: #000000;
+  border: 2px solid #757575; 
+}
+
+.btns {
+  width: 75%;
+  margin-top: 30px;
+  display: flex;
+  justify-content: flex-end;
+}
+.clear__btn {
+  width: 45%;
+  height: 50px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #373737;
+  color: #fff;
+  font-family: 'Proxima-Nova_bold';
+  font-size: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.edit__btn {
+  width: 45%;
+  height: 50px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #FF002E;
+  color: #fff;
+  font-family: 'Proxima-Nova_bold';
+  font-size: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.edit__btn:hover {
+  background-color: #ff0000c7
+}
+
+
+
+.liked__videos {
+  width: 100%;
+  height: auto;
+  background-color: red;
+}
+
+
+
+
+
+/*!        ADAPTIVE       */
+@media all and (max-width: 1800px) {
+  .subscriptions {
     width: 100%;
-    margin-top: 20px;
-}
-.profil_logo_name{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-.folowing{
-    width: 100%;
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    padding-right: 60px;
-    padding-left: 40px;
-}
-.folow_liked{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-.info_edit{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    justify-content: space-evenly;
-    flex-direction: column;
-    height: 60px;
-}
-.info_edit button{
-    width: 160px;
-    height: 35px;
-    background-color: inherit;
-    border: 1px solid black;
-    border-radius: 6px;
+  }
 }
 .obj_platform{
     width: 100%;
@@ -199,22 +348,67 @@ border-top: 1px solid black;
 }
 .new_profil_downcontent div{
     display: flex;
+@media all and (max-width: 1550px) {
+  .follow__text {
+    font-size: 20px;
+  }
+  .count {
+    font-size: 20px;
+  }
+  .nav__title {
+    margin-right: 40px; 
+  }
+  .profile__name {
     margin-top: 20px;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+    font-size: 30px;
+  }
 }
-.logo_links{
-    width: 27px;
+@media all and (max-width: 1300px) {
+  .nav__title {
+    font-size: 25px;
+    margin-right: 20px; 
+  }
 }
-.create_logo{
-    width: 60px;
+@media all and (max-width: 1200px) {
+  .profile__info {
+    width: 80%;
+  }
+  .profile__logo_wrapper {
+    width: 15%;
+  }
 }
-.create__logo{
-    padding: 10px;
-    margin-right: 10px;
-    margin-bottom: 10px;
+@media all and (max-width: 1000px) {
+  .nav__title {
+    font-size: 20px;
+    margin-right: 10px; 
+  }
+  .profile__desc {
+    margin-top: 10px;
+  }
+  .edit__profile__btn {
+    width: 150%;
+    height: 40px;
+  }
 }
+@media all and (max-width: 1800px) {
+  .following {
+    margin-top: 15px;
+  }
+  .follow__text {
+    font-size: 17px;
+  }
+  .count {
+    font-size: 17px;
+  }
+  .profile__name {
+    margin-top: 20px;
+    font-size: 25px;
+  }
+  .profile__desc {
+    font-size: 17px;
+  }
+}
+
 @media  (max-width:1180px){
     .profile_left_txt{
         margin-left: -4px;
@@ -339,4 +533,34 @@ border-top: 1px solid black;
     .logo_obj{
         width: 80%;
     }
+}
+
+/* adap pk */
+
+@media (max-width:1290px){
+  .modal__content{
+    padding: 15px;
+  }
+  .edit__fields{
+    margin-left: 30px;
+  }
+  .edit__logo{
+    width: 85%;
+  }
+}
+@media (max-height:1113px){
+  .modal{
+    height: 100%;
+  }
+}
+@media (max-width:1000px){
+  .modal__content{
+    width: 80%;
+    height: 90%;
+    padding: 40px;
+  }
+  .img__wrapper img{
+    width: 90px;
+    height: 90px;
+  }
 }
