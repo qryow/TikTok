@@ -154,7 +154,6 @@ input::placeholder {
   border-radius: 15px;
   background-color: #fff;
   width: 50%;
-  height: 80%;
   transform: scale(0.5);
   transition: 0.4s all;
 }
@@ -173,8 +172,8 @@ input::placeholder {
   margin-left: 90px;
 }
 .edit__field_title {
-  width: 17%;
-  margin-right: 70px;
+  width: 20%;
+  margin-right: 50px;
   font-family: "Proxima-Nova_bold";
   font-size: 24px;
   color: #161722;
@@ -187,8 +186,9 @@ input::placeholder {
   display: flex;
   align-items: center;
 }
-.img__wrapper {
-  width: 15%;
+.img__wrapper img{
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
 }
 .img {
@@ -488,4 +488,34 @@ input::placeholder {
     .logo_links{
         width: 23px;
     }
+}
+
+/* adap pk */
+
+@media (max-width:1290px){
+  .modal__content{
+    padding: 15px;
+  }
+  .edit__fields{
+    margin-left: 30px;
+  }
+  .edit__logo{
+    width: 85%;
+  }
+}
+@media (max-height:1113px){
+  .modal{
+    height: 100%;
+  }
+}
+@media (max-width:1000px){
+  .modal__content{
+    width: 80%;
+    height: 90%;
+    padding: 40px;
+  }
+  .img__wrapper img{
+    width: 90px;
+    height: 90px;
+  }
 }
