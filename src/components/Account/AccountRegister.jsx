@@ -50,7 +50,7 @@ const AccountRegister = () => {
 
       <div className={style.inputs}>
         <div className={style.navigation}>
-          <NavLink className={style.nav__title} to="/register">
+          <NavLink className={style.nav__title} to="/">
             Sign Up
           </NavLink>
           <NavLink className={style.nav__title} to="/login">

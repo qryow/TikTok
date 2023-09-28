@@ -81,6 +81,8 @@
   font-size: 30px;
   cursor: pointer;
   transition: 0.3s;
+  position: relative;
+  left: 0px;
 }
 .btn:hover {
   background-color: #df0000
