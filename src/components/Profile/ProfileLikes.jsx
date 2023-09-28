@@ -16,15 +16,12 @@ const ProfileLikes = () => {
   console.log(posts);
   const { isDarkMode, toggleDarkMode } = useDarkMode(); 
 
- let likedPosts = [];
+  let likedPosts = [];
+  if (Array.isArray(posts.results)) {
+    likedPosts = posts.results.filter((post) => post.likes && post.likes.some((like) => like.like === true));
+  }
+  console.log(likedPosts);
 
- if (Array.isArray(posts)) {
-   likedPosts = posts.filter((post) => post.likes && post.likes.some((like) => like.like === true));
- }
- 
- console.log(likedPosts);
- 
- 
   const dispatch = useDispatch();
   
   useEffect(() => {
@@ -87,7 +84,9 @@ const ProfileLikes = () => {
             </NavLink>
           </div>
 
-          <p></p>
+          <div className={style.liked__videos}>
+            
+          </div>
 
           
         </div>

@@ -290,6 +290,14 @@ input::placeholder {
 
 
 
+.liked__videos {
+  width: 100%;
+  height: auto;
+  background-color: red;
+}
+
+
+
 
 
 /*!        ADAPTIVE       */
