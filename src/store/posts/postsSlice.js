@@ -22,7 +22,7 @@ const PostsSlice = createSlice({
       state.loading = false
     })
     .addCase(CreatePost.fulfilled, (_, action) => {
-      action.payload.navigate(`/`)
+      action.payload.navigate(`/homepage`)
     })
     .addCase(getComments.fulfilled, (state, action) => {
       state.loading = false;
