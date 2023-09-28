@@ -20,13 +20,18 @@ input::placeholder {
 }
 
 .edit__profile__btn {
-    width: 190%;
-    height: 50px;
-    /*margin-top: 20px;*/
-    font-size: 20px;
-    background-color: inherit;
-    border: 1px solid black;
-    border-radius: 5px;
+  width: 15%;
+  height: 50px;
+  /*margin-top: 20px;*/
+  font-size: 20px;
+  background-color: inherit;
+  border: 1px solid black;
+  border-radius: 5px;
+  color: black;
+}
+
+.edit__profile__btn_lighter{
+  border: 1px solid white;
 }
 
 .profile__wrapper {
@@ -38,6 +43,17 @@ input::placeholder {
   justify-content: flex-end;
   pointer-events: none;
 }
+
+.profile__wrapper_lighter{
+  background-color: black;
+  color: white;
+}
+
+.profile__black{
+  color: white;
+  background-color: #000000;
+}
+
 .profile__content {
   width: 80%;
   height: 25%;
@@ -46,6 +62,7 @@ input::placeholder {
 .profile__info {
   width: 60%;
   margin-left: 30px;
+  margin-top: 40px;
   height: 100%;;
   display: flex;
   align-items: center;
@@ -54,13 +71,18 @@ input::placeholder {
   width: 20%;
 }
 .profile__logo {
-  width: 100%;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
 }
 .profile__info_content {
   width: 70%;
   height: 80%;
-  margin-left: 20px;
+  margin-left: 50px;
+}
+
+.premiumIcon{
+  display: flex;
 }
 .profile__name {
   font-family: "Proxima-Nova_bold";
@@ -103,6 +125,10 @@ input::placeholder {
   font-family: 'Proxima-Nova_bold';
   font-size: 30px;
   text-decoration: none;
+}
+
+.nav__title_lighter{
+  color: white;
 }
 
 
@@ -265,13 +291,132 @@ input::placeholder {
   background-color: #ff0000c7
 }
 
+.navbar_600{
+  display: none;
+}
 
 
+.liked__videos {
+  width: 100%;
+  height: auto;
+  background-color: red;
+}
 
 
+/*!        ADAPTIVE       */
+@media all and (max-width: 1800px) {
+  .subscriptions {
+    width: 100%;
+  }
+}
+.obj_platform{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+}
+.logo_obj{
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+    text-decoration: none;
+}   
+.navlink2{
+    text-decoration: none;
+}
+.logo_obj img{
+    height: 20px;
+}
+.sa{
+    background-color: #fff;
+}
+.new_profil_centercontent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 500px;
+}
+.new_profil_downcontent{
+display: flex;
+width: 100%;
+position: fixed;
+left: 0px;
+top: 570px;
+background-color: #fff;
+height: 60px;
+justify-content: space-evenly;
+border-top: 1px solid black;
+}
+.new_profil_downcontent div{
+    display: flex;
+}
+@media all and (max-width: 1550px) {
+  .follow__text {
+    font-size: 20px;
+  }
+  .count {
+    font-size: 20px;
+  }
+  .nav__title {
+    margin-right: 40px; 
+  }
+  .profile__name {
+    margin-top: 20px;
+    font-size: 30px;
+  }
+}
+@media all and (max-width: 1300px) {
+  .nav__title {
+    font-size: 25px;
+    margin-right: 20px; 
+  }
+}
+@media all and (max-width: 1200px) {
+  .profile__info {
+    width: 80%;
+  }
+  .profile__logo_wrapper {
+    width: 15%;
+  }
 
+  .profile__info_content{
+    margin-left: 80px;
+  }
 
-
+}
+@media all and (max-width: 1000px) {
+  .nav__title {
+    font-size: 20px;
+    margin-right: 10px; 
+  }
+  .profile__desc {
+    margin-top: 10px;
+  }
+  .edit__profile__btn {
+    width: 150%;
+    height: 40px;
+  }
+}
+/*@media all and (max-width: 1800px) {
+  .following {
+    margin-top: 15px;
+  }
+  .follow__text {
+    font-size: 17px;
+  }
+  .count {
+    font-size: 17px;
+  }
+  .profile__name {
+    margin-top: 20px;
+    font-size: 25px;
+  }
+  .profile__desc {
+    font-size: 17px;
+  }
+}*/
 
 @media  (max-width:1180px){
     .profile_left_txt{
@@ -331,58 +476,49 @@ input::placeholder {
     .profile__right_content{
         width: 90%;
     }
+    .profile__info_content{
+      margin-left: 100px;
+    }
+    .edit__profile__btn{
+      font-size: 12px;
+    }
 }
 @media (max-width:600px){
-    .navbar{
-        display: none;
-    }
-    .px600navbar{
-        display: block;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .profile__platform{
-        display: none;
-    }
-    .new_profil_platform{
-        display: block;
-    }
-    .profil_logo_name img{
-        height: 100px;
-    }
-    .profil_logo_name h3{
-        font-size: 22px;
-    }
-}
-@media (max-width:551px){
-    .logo_obj{
-        justify-content: space-around;
-    }
-    .new_profil_downcontent{
-        top: 595px;
-    }
-}
-@media (max-width:500px){
-    .new_profil_downcontent{
-        top: 590px;
-    }
-    .folowing{
-        padding-right: 40px;
-        padding-left: 20px;
-    }
-}
-@media (max-width:351px){
-    .create_logo{
-        width: 53px;
-    }
-    .logo_links{
-        width: 23px;
-    }
-    .new_profil_downcontent{
-        top: 596px;
-    }
+  .profile__info{
+    justify-content: space-evenly;
+    flex-direction: column;
+    width: 100%;
+    margin-left: 0px;
+  }
+  .profile__content{
+    width: 100%;
+  }
+  .profile__info_content{
+    width: 90%;
+  }
+  .navigation{
+    margin-top: 100px;
+  }
+  .edit__profile__btn{
+    font-size: 20px;
+  }
+  .nav__title{
+    margin-left: 6%;
+  }
+  .navbar_600{
+    display: block;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+    top: -80px;
+  }
+  .navbar_600 img{
+    height: 35px;
+  }
 }
 @media (max-width:322px){
     .create_logo{
@@ -394,4 +530,38 @@ input::placeholder {
     .logo_links{
         width: 23px;
     }
+    .logo_obj{
+        width: 80%;
+    }
+}
+
+
+/* adap pk */
+
+@media (max-width:1290px){
+  .modal__content{
+    padding: 15px;
+  }
+  .edit__fields{
+    margin-left: 30px;
+  }
+  .edit__logo{
+    width: 85%;
+  }
+}
+@media (max-height:1113px){
+  .modal{
+    height: 100%;
+  }
+}
+@media (max-width:1000px) {
+  .modal__content {
+    width: 80%;
+    height: 90%;
+    padding: 40px;
+  }
+  .img__wrapper img {
+    width: 90px;
+    height: 90px;
+  }
 }

@@ -1,0 +1,480 @@
+@font-face {
+    font-family: "Quicksand";
+    src: url('../../../fonts/ProximaNova/Quicksand.zip');
+    font-style:normal;
+}
+@font-face {
+    font-family: "Proxima-Nova_bold";
+    src: url("../../../fonts/ProximaNova/proximanova_bold.otf") format("truetype");
+    font-style: normal;
+}
+  body{
+    overflow-x:unset;
+  }
+  .forgood__navbar{
+    display: flex;
+    width: 100%;
+    height: 10vh;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    padding-left: 50px;
+    border-bottom: 0,01px solid rgb(193, 193, 193);
+}
+.forgood__navbar img{
+    width: 120px;
+}
+.navbar_left_content{
+    display: flex;
+    width: 40%;
+    justify-content: space-around;
+    align-items: center;
+    font-family: "Quicksand";
+    height: 100%;
+    list-style-type: none;
+}
+.navbar_left_content li{
+    border-bottom: 1px solid white;
+}
+.navbar_left_content li:hover{
+    border-bottom: 1px solid rgb(255, 36, 189);
+    transition: 1s;
+    cursor: pointer;
+}
+.navbar_left_content input{
+    width: 220px;
+    height: 38px;
+    border: none;
+    border-radius: 30px;
+    padding: 20px;
+    font-size: 18px;
+    background-color: rgb(231, 231, 231);
+}
+.forgood{
+    text-align: center;
+    width: 100%;
+}
+.social_logo{
+  height: 190px;
+  display: flex;
+  align-items: center;
+    justify-content: center;
+}
+.social_logo img{
+    margin: 5px;
+}
+.top_content_txt h2{
+    font-size: 60px;
+    font-family: 'Proxima-Nova_bold';
+}
+.top_content_txt p{
+    font-size: 30px;
+}
+.Success_stories{
+    width: 100%;
+    height: 600px;
+    margin-top: 200px;
+    background-color: rgb(234, 238, 239);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 100px;
+}
+.Success_stories h2{
+    font-size: 59px;
+}
+.Success_stories_img{
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.Success_stories_img button{
+    border: none;
+    border-radius: 10px;
+    background-color: inherit;
+    height: 200px;
+    cursor: pointer;
+    width: 320px;
+}
+.Success_stories_img img{
+    border: none;
+    border-radius: 10px;
+    width: 320px;
+}
+.Success_stories li{
+    list-style-type: none;
+    font-style: small;
+    font-size: 30px;
+    cursor: pointer;
+    color: rgb(255, 20, 134);
+    border-bottom: 1px solid rgb(234, 238, 239);
+}
+.Success_stories li:hover{
+    border-bottom: 1px solid  rgb(255, 20, 134);
+    transition: 1.5s;
+}
+
+.How{
+    width: 100%;
+    height: 600px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 100px;
+}
+.How h2{
+    font-size: 59px;
+}
+.How_img{
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.How_img button{
+    border: none;
+    border-radius: 10px;
+    /* background-color: inherit; */
+    height: 200px;
+    cursor: pointer;
+    width: 320px;
+}
+.How_img img{
+    border: none;
+    border-radius: 10px;
+    width: 320px;
+}
+.How li{
+    list-style-type: none;
+    font-style: small;
+    font-size: 30px;
+    cursor: pointer;
+    color: rgb(255, 20, 134);
+    border-bottom: 1px solid rgb(234, 238, 239);
+}
+.How li:hover{
+    border-bottom: 1px solid  rgb(255, 20, 134);
+    transition: 1.5s;
+}
+.partners{
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(234, 238, 239);
+    flex-direction: column;
+}
+.partners img{
+    border: none;
+    border-radius: 10px;
+    width: 320px;
+}
+.partners button{
+    border: none;
+    border-radius: 10px;
+    width: 320px;
+}
+.partners h2{
+    font-size: 50px;
+    font-family: "Proxima-Nova_bold";
+}
+.forgoodlogo{
+    width: 95%;
+}
+.burger_menu{
+    width: 50%;
+    height: 300px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    list-style-type: none;
+    display: none;
+    margin-left: 25%;
+}
+.burger_menu input{
+    width: 210px;
+    height: 35px;
+    border: none;
+    border-radius: 10px;
+    background-color: darkgray;
+    color: black;
+    font-size: 17px;
+    padding: 9px;
+}
+.menu_icon{
+    width: 50px;
+    height: 50px;
+    border: none;
+    background-color: inherit;
+    display: none;
+}
+.menu_icon img{
+    width: 40px;
+    height: 40px;
+    border: none;
+}
+.search{
+    display: none;
+    width: 230px;
+    height: 40px;
+    border-radius: 25px;
+    border: none;
+    background-color: rgb(211, 211, 211);
+    padding: 10px;
+
+}
+@media (max-width:1400px){
+    .navbar_left_content{
+        width: 50%;
+        justify-content: space-between;
+    }
+}
+@media (max-width:1180px){
+    .navbar_left_content{
+        width: 65%;
+        justify-content: space-between;
+    }
+    .top_content_txt h2{
+        font-size: 50px  ;
+    }
+    .top_content_txt p{
+        font-size: 24px;
+    }
+    .How_img{
+        overflow-x: scroll;
+        padding-left: 160px;
+    }
+    .How_img button{
+        margin-left: 50px;
+    }
+    .Success_stories_img{
+        overflow-x: scroll;
+    }
+    .Success_stories_img button{
+        margin-left: 30px;
+    }
+}
+@media (max-width:1000px){
+    .navbar_left_content{
+        width: 70%;
+        justify-content: space-between;
+    }
+    .How_img{
+        overflow-x: scroll;
+        padding-left: 230px;
+    }
+    .How_img button{
+        margin-left: 20px;
+    }
+    .Success_stories_img{
+        overflow-x: scroll;
+        padding-left: 230px;
+    }
+    .Success_stories_img button{
+        margin-left: 20px;
+    }
+}
+@media (max-width:900px){
+    .top_content_txt h2{
+        font-size: 50px  ;
+    }
+    .top_content_txt p{
+        font-size: 24px;
+    }
+    .How_img{
+        overflow-x: scroll;
+        padding-left: 300px;
+    }
+    .How_img button{
+        margin-left: 50px;
+    }
+    .Success_stories_img{
+        overflow-x: scroll;
+        padding-left: 300px;
+    }
+    .Success_stories_img button{
+        margin-left: 50px;
+    }
+}
+@media (max-width:840px){
+    .top_content_txt h2{
+        font-size: 50px  ;
+    }
+    .top_content_txt p{
+        font-size: 24px;
+    }
+    .How_img{
+        overflow-x: scroll;
+        padding-left: 350px;
+    }
+    .How_img button{
+        margin-left: 20px;
+    }
+    .Success_stories_img{
+        overflow-x: scroll;
+        padding-left: 350px;
+    }
+    .Success_stories_img button{
+        margin-left: 20px;
+    }
+    .navbar_left_content{
+        display: none;
+    }
+    .top_content_txt p{
+        font-size: 21px;
+    }
+    .top_content_txt h2{
+        font-size: 40px;
+    }
+    .search{
+        display: block;
+    }
+}
+@media (max-width:501px){
+    .search{
+        width: 190px;
+        height: 35px;
+    }
+    .Success_stories_img button{
+        width: 250px;
+    }
+    .Success_stories_img img{
+        width: 250px;
+    }
+    .How_img button{
+        width: 250px;
+        height: 160px;
+    }
+    .How_img img{
+        width: 250px;
+    }
+}
+@media (max-width:451px){
+    .forgood__navbar{
+        padding: 7px;
+    }
+    .Success_stories h2{
+        font-size: 40px;
+    }
+    .How h2{
+        font-size: 40px;
+    }
+    .Success_stories_img button{
+        width: 250px;
+    }
+    .Success_stories_img img{
+        width: 250px;
+    }
+    .How_img button{
+        width: 250px;
+        height: 160px;
+    }
+    .How_img img{
+        width: 250px;
+    }    .Success_stories_img button{
+        width: 250px;
+    }
+    .Success_stories_img img{
+        width: 250px;
+    }
+    .How_img button{
+        width: 250px;
+        height: 160px;
+    }
+    .How_img img{
+        width: 250px;
+    }
+    .partners button{
+        width: 250px;
+    }
+    .partners img{
+        width: 250px;
+    }
+    .partners{
+        justify-content: space-evenly;
+    }
+    .partners h2{
+        font-size: 37px;
+    }
+}
+@media (max-width:400px){
+    .Success_stories_img button{
+        width: 230px;
+    }
+    .Success_stories_img img{
+        width: 230px;
+    }
+    .How_img button{
+        width: 230px;
+        height: 130px;
+    }
+    .How_img img{
+        width: 230px;
+    }
+}
+@media (max-width:351px){
+    .search{
+        width: 140px;
+        height: 27px;
+    }
+    .forgood__navbar img{
+        width: 100px;
+    }
+    .top_content_txt h2{
+        font-size: 35px;
+    }
+    .Success_stories_img button{
+        width: 220px;
+    }
+    .Success_stories_img img{
+        width: 220px;
+    }
+    .How_img button{
+        width: 220px;
+        height: 120px;
+    }
+    .How_img img{
+        width: 220px;
+    }
+}
+@media (max-width:322px){
+    .forgood__navbar{
+        padding: 0px;
+    }
+    .search{
+        width: 100px;
+        height: 25px;
+    }
+    .Success_stories_img button{
+        width: 200px;
+    }
+    .Success_stories_img img{
+        width: 200px;
+    }
+    .How_img button{
+        width: 200px;
+        height: 100px;
+    }
+    .How_img img{
+        width: 200px;
+    }
+    .Success_stories{
+        width: 108%;
+    }
+    .partners{
+        width: 108%;
+    }
+    .forgood__navbar{
+        width: 108%;
+    }
+    .forgoodlogo{
+        width: 100%;
+        margin-left: 15px;
+    }
+}

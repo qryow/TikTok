@@ -5,16 +5,19 @@ import ProfileNavbar from './ProfileNavbar'
 import Subscriptions from '../UI/subscriptions/SubscriptionsList'
 import EditProfile from './EditProfile';
 import { useSelector } from 'react-redux';
+import { useDarkMode } from '../DarkMode/DarkMode'; 
+import PremiumIcon from '../Premium/PremiumIcon';
 
 const ProfileFavorites = () => {
   const [modalActive, setModalActive] = useState(false)
   const { currentAccount } = useSelector(state => state.account)
+  const { isDarkMode, toggleDarkMode } = useDarkMode(); 
 
   return (
     <>
       <ProfileNavbar />
       <Subscriptions />
-      <div className={style.profile__wrapper}>
+      <div className={isDarkMode ? `${style.profile__wrapper} ${style.profile__wrapper_lighter}` : `${style.profile__wrapper}`}>
         <div className={style.profile__content}>
 
 
@@ -25,8 +28,11 @@ const ProfileFavorites = () => {
               </div>
 
               <div className={style.profile__info_content}>
+              <div className={style.premiumIcon}>
                 <h4 className={style.profile__name}> { currentAccount.name } </h4>
-                
+                <PremiumIcon />
+                </div>
+
                 <div className={style.subscriptions}>
                   <div className={style.following}>
                     <p className={style.follow__text}> <span className={style.count}>100</span> following</p>
@@ -43,7 +49,7 @@ const ProfileFavorites = () => {
               </div>
 
               <div className={style.btn__wrapper}>
-                <button className={style.edit__profile__btn} onClick={() => setModalActive(true)}>Edit profile</button>
+                <button className={isDarkMode ? `${style.edit__profile__btn} ${style.edit__profile__btn_lighter}` : `${style.edit__profile__btn}`} onClick={() => setModalActive(true)}>Edit profile</button>
               </div>
             </div>
           )}
@@ -52,7 +58,7 @@ const ProfileFavorites = () => {
             <NavLink className={style.nav__title} to="/profile">
               Videos
             </NavLink>
-            <NavLink className={style.nav__title} to="/profile-favorites">
+            <NavLink className={isDarkMode ? `${style.nav__title} ${style.nav__title_lighter}` : `${style.nav__title}`} to="/profile-favorites">
               Favorites
             </NavLink>
             <NavLink className={style.nav__title} to="/profile-reposts">

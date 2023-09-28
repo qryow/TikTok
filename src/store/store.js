@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import accountReducer from './account/AccountSlice';
-import postsReducer from './posts/postsSlice'
+import postsReducer from './posts/postsSlice';
 
 export default configureStore({
     middleware: getDefaultMiddleware => getDefaultMiddleware({
@@ -8,6 +8,6 @@ export default configureStore({
     }),
     reducer: {
         account: accountReducer,
-        posts: postsReducer
+        posts: postsReducer,
     }
 });

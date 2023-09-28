@@ -3,7 +3,7 @@ import style from '../styles/Video.module.css';
 import videoFile from '../../../videos/video.mp4';
 import play from '../../../img/play.svg';
 
-const Video = () => {
+const Video = ({ post }) => {
   const videoRef = useRef();
   const clickRef = useRef();
   const [isPlaying, setIsPlaying] = useState(false);
@@ -68,13 +68,13 @@ const Video = () => {
 
   return (
     <div className={style.video__item}
-    //onMouseEnter={handleMouseEnter}
-    //onMouseLeave={handleMouseLeave}
+    onMouseEnter={handleMouseEnter}
+    onMouseLeave={handleMouseLeave}
     >
       {isPlaying ? (
         <div className={style.video__wrapper}>
           <video autoPlay loop className={style.video} ref={videoRef} onClick={PlayPause}>
-            <source src={videoFile} type="video/mp4" />
+            <source src={post.file_video} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
             <div className={style.navigation}>
@@ -87,7 +87,7 @@ const Video = () => {
         <>
           <div className={style.video__wrapper}>
             <video className={style.video} ref={videoRef}>
-              <source src={videoFile} type="video/mp4" />
+              <source src={post.file_video} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
             <img className={style.play} src={play} alt="play" onClick={PlayPause} />
