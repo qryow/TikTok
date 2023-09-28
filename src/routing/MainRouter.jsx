@@ -20,6 +20,8 @@ import InfoPage from '../pages/InfoPages/InfoPage'
 import PremiumPage from '../pages/PremiumPages/PremiumPage'
 
 import ProfilPages from '../pages/ProfilPages/ProfilPages'
+import ForGoodPage from '../pages/addaptionalSitesPages/ForGoodPage'
+import ForgoodAcardions from '../components/additional sites/ForgoodAcardions'
 import ProfileFavorites from '../components/Profile/ProfileFavourites'
 import ProfileReposts from '../components/Profile/ProfileReposts'
 import ProfileLikes from '../components/Profile/ProfileLikes'
@@ -41,6 +43,14 @@ const MainRouter = () => {
       <Route path='/' element={<RecsPage />} />
       <Route path='/following' element={<FollowingPage />} />
       <Route path='/search' element={<SearchPage />} />
+      <Route path='/acount' element={<AcountPage/>}/>
+      <Route path='/video' element={<VideosPage/>} />
+      <Route path='/hashtag' element={<HashtagsPage/>}/>
+      <Route path='/createVideo' element={<Create/>}/>
+      <Route path='/profil' element={<ProfilPages/>}/>
+      <Route path='/forgood' element={<ForGoodPage/>}/>
+      <Route path='/acardion' element={<ForgoodAcardions/>}/>
+
       <Route path='/search-accounts' element={<SearchPageAccount />} />
       <Route path='/search-hashtags' element={<SearchPageHashtags />} />
       <Route path='/create-video' element={<Create/>}/>
@@ -54,6 +64,7 @@ const MainRouter = () => {
 
       <Route path='/opasiti' element={<Opasiti/>}/>
       <Route path='/safury' element={<Safery/>} />
+
     </Routes>
   )
 }
