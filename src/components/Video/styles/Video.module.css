@@ -59,10 +59,16 @@
   font-size: 25px;
   margin-bottom: 5px;
 }
+.acc__name_lighter{
+  color: white;
+}
 .video__subtitle {
   font-family: "Proxima-Nova_regular";
   margin-bottom: 3px;
   font-size: 20px;
+}
+.video__subtitle_lighter{
+  color: white;
 }
 .hashtags {
   width: 90%;
@@ -152,6 +158,9 @@
   left: 40%;
   font-family: "Proxima-Nova_bold";
   font-size: 20px;
+}
+.like__text_lighter{
+  color: white;
 }
 .comment {
   width: 100%;

@@ -15,7 +15,6 @@
   width: 100%;
   z-index: 1;
   height: auto;
-  background-color: #fff;
   border-bottom: 2px solid #969696;
 }
 .container {
@@ -85,6 +84,10 @@
   display: flex;
   justify-content: flex-end;
 }
+
+.search_list__wrapper_lighter{
+  background-color: black;
+}
 .search__block {
   width: 80%;
   margin-top: 13vh;
@@ -105,7 +108,8 @@
   text-decoration: none;
 }
 
-
+.nav__title_lighter{
+  color: white;
 
 @media all and (max-width: 1500px) {
   .search__block {
@@ -196,3 +200,4 @@
 }
 
 
+}

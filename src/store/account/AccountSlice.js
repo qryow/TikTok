@@ -1,11 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { registerUser, accountActivate, loginUser, changePassword, deleteAccount, forgotPassword, forgotPasswordComplete, getProfile, accountLogout } from './AccountAction';
-import { addDataToLocalStorage } from "../../helpers/functions";
+import { addDataToLocalStorage, addEmailToLocalStorage } from "../../helpers/functions";
+
 
 const accountSlice = createSlice({
     name: 'account',
     initialState: {
         currentAccount: null,
+        premiumStatus: localStorage.getItem('premiumStatus') === 'true',
         status: ''
     },
     reducers: {
@@ -14,12 +16,18 @@ const accountSlice = createSlice({
         },
         clearStatus: (state) => {
             state.status = '';
-        }
+        },
+        setPremiumStatus: (state, action) => {
+          state.premiumStatus = action.payload;
+          localStorage.setItem('premiumStatus', action.payload ? 'true' : 'false');
+        },
     },
     extraReducers: (builder) => {
         builder
-        .addCase(registerUser.fulfilled, (_, action) => {
+        .addCase(registerUser.fulfilled, (state, action) => {
             action.payload.navigate('/activate');
+            state.currentAccount = action.payload.userEmail;
+            addEmailToLocalStorage(action.payload.userEmail, action.payload.data);
         })
         .addCase(registerUser.rejected, (state) => {
             state.status = 'error';
@@ -74,5 +82,5 @@ const accountSlice = createSlice({
     }
 });
 
-export const { clearCurrentAccount, clearStatus } = accountSlice.actions;
+export const { clearCurrentAccount, clearStatus, setPremiumStatus } = accountSlice.actions;
 export default accountSlice.reducer;

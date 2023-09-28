@@ -1,5 +1,3 @@
-// InfoNavbar.js
-
 import React, { useState } from 'react';
 import tiktok from '../../img/tiktokdevelop.svg';
 import style from './InfoStyles/Info.module.css';

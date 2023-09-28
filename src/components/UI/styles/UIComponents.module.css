@@ -15,6 +15,7 @@
 }
 .to__black {
   background-color: #000;
+  color: white;
 }
 
 .container {
@@ -47,6 +48,9 @@
   font-family: 'Proxima-Nova_bold';
   font-size: 35px;
   text-decoration: none;
+}
+.to__white {
+  color: #fff !important;
 }
 .navbar_profil{
   display: block;

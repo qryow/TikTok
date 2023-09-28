@@ -2,6 +2,9 @@
   width: 100%;
   height: auto;
 }
+.video__list_dark{
+  background-color: black;
+}
 .video__item {
   width: 100%;
   margin-top: 13vh;
@@ -12,7 +15,6 @@
 .video__item_wrapper {
   width: 35%;
   height: 100%;
-  background: #fff;
 }
 .wrap {
   display: flex;

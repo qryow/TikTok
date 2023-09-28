@@ -8,7 +8,11 @@ import style from '../CRUD/style/Crud__videoStyles.module.css';
 import logo from '../../img/LogoLight.svg';
 import profile from '../../img/Profile.svg';
 import home from '../../img/HomeIcon.svg'
-import Footer from '../Info/Footer';
+
+import { useDarkMode } from '../DarkMode/DarkMode';
+
+import lightLogo from '../../image/lightLogo.svg';
+import lightHome from '../../image/lightHome.svg';
 
 const Create = () => {
   const [post, setPost] = useState({
@@ -36,20 +40,21 @@ const Create = () => {
     });
   };
 
+  const { isDarkMode, toggleDarkMode } = useDarkMode();
 
     return (
         <>
-          <div className={style.navbar}>
+          <div className={isDarkMode ? `${style.navbar} ${style.navbar_lighter}` : `${style.navbar}`}>
             <div className={style.container}>
               <div className={style.nav__wrapper}>
                 <div className={style.logo__wrapper}>
-                  <img className={style.logo} src={logo} alt="TikTok logo" />
+                  <img className={style.logo} src={isDarkMode ? lightLogo : logo} alt="TikTok logo" />
                 </div>
 
                 <div className={style.menu}>
                   <div className={style.home__wrapper} >
                     <NavLink to="/">
-                    <img className={style.profile__logo} src={home} alt="home" />
+                    <img className={style.profile__logo} src={isDarkMode ? lightHome : home} alt="home" />
                     </NavLink>
                   </div>
                   <div className={style.profile__wrapper} >
@@ -62,21 +67,21 @@ const Create = () => {
             </div>
           </div> 
 
-            <div className={style.create_content}>
+            <div className={isDarkMode ? `${style.create_content} ${style.create_content_lighter}` : `${style.create_content}`}>
                 
                 <div className={style.input__wrapper}>
                   { post.file_video ? (
                     <video className={style.video} src={URL.createObjectURL(post.file_video)} />
                   ) : (
                     <>
-                      <p className={style.input__text}>Add some video</p>
+                      <p className={isDarkMode ? `${style.input__text} ${style.input__text_lighter}` : `${style.input__text}`}>Add some video</p>
                       <input type="file" accept="video/*" className={style.video__input} onChange={(e) => setPost({ ...post, file_video: e.target.files[0]  })} />
                     </>
                   )}
                 </div>
 
                 <div className={style.video__platform}>
-                    <h2 className={style.create_vid}>Create video</h2>
+                    <h2 className={isDarkMode ? `${style.create_vid} ${style.create_vid_lighter}` : `${style.create_vid}`}>Create video</h2>
                     <div className={style.video_inputs}>
                         <input type="text" placeholder='Title' className={style['create-inputs']} onChange={(e) => setPost({ ...post, title: e.target.value })} value={post.title}/>
                         <input type="text" placeholder='Description' className={style['create-inputs']} onChange={(e) => setPost({ ...post, description: e.target.value })} value={post.description} />

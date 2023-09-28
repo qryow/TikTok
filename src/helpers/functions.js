@@ -3,6 +3,10 @@ export const addDataToLocalStorage = (userEmail, token) => {
     localStorage.setItem('token', JSON.stringify(token));
 };
 
+export const addEmailToLocalStorage = (userEmail) => {
+  localStorage.setItem('account', JSON.stringify(userEmail));
+}
+
 export const logout = () => {
     localStorage.removeItem('account');
     localStorage.removeItem('token');

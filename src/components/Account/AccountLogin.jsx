@@ -36,6 +36,16 @@ const AccountLogin = () => {
         </div>
       </div>
 
+      {status === 'error' ? (
+        <>
+          <div className={style.error}>
+            <h3 className={style.error__text}>Some error occured!   </h3>
+            <br />
+            <button className={style.error__btn} onClick={() => dispatch(clearStatus())}>Try again</button>
+          </div>
+        </>
+      ) : (
+
       <div className={style.inputs}>
         <div className={style.navigation}>
           <NavLink className={style.nav__title} to="/register">
@@ -49,11 +59,15 @@ const AccountLogin = () => {
         <div className={style.inputs__wrapper}>
           <input className={style.input} type="email" src='' placeholder="Email@gmail.com" onChange={(e) => setUserObj({ ...userObj, email: e.target.value})} />
           <input className={style.input} type="password" minLength="6" placeholder="Password" onChange={(e) => setUserObj({ ...userObj, password: e.target.value})} />
+          <a className={style.forgot} href="" onClick={() => navigate('/forgot-password')} > Забыли пароль ?</a>
 
           <button className={style.btn} onClick={() => dispatch(loginUser({ userObj, navigate }))}>Login</button>
         </div>
 
       </div>
+      )}
+
+      
     </>
   )
 }

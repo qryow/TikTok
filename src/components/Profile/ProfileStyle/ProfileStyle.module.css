@@ -29,6 +29,10 @@ input::placeholder {
     border-radius: 5px;
 }
 
+.edit__profile__btn_lighter{
+  border: 1px solid white;
+}
+
 .profile__wrapper {
   position: relative;
   width: 100%;
@@ -38,6 +42,17 @@ input::placeholder {
   justify-content: flex-end;
   pointer-events: none;
 }
+
+.profile__wrapper_lighter{
+  background-color: black;
+  color: white;
+}
+
+.profile__black{
+  color: white;
+  background-color: #000000;
+}
+
 .profile__content {
   width: 80%;
   height: 25%;
@@ -63,6 +78,10 @@ input::placeholder {
   width: 70%;
   height: 80%;
   margin-left: 50px;
+}
+
+.premiumIcon{
+  display: flex;
 }
 .profile__name {
   font-family: "Proxima-Nova_bold";
@@ -105,6 +124,10 @@ input::placeholder {
   font-family: 'Proxima-Nova_bold';
   font-size: 30px;
   text-decoration: none;
+}
+
+.nav__title_lighter{
+  color: white;
 }
 
 
@@ -272,6 +295,12 @@ input::placeholder {
 }
 
 
+.liked__videos {
+  width: 100%;
+  height: auto;
+  background-color: red;
+}
+
 
 /*!        ADAPTIVE       */
 @media all and (max-width: 1800px) {
@@ -279,6 +308,49 @@ input::placeholder {
     width: 100%;
   }
 }
+.obj_platform{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+}
+.logo_obj{
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+    text-decoration: none;
+}   
+.navlink2{
+    text-decoration: none;
+}
+.logo_obj img{
+    height: 20px;
+}
+.sa{
+    background-color: #fff;
+}
+.new_profil_centercontent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 500px;
+}
+.new_profil_downcontent{
+display: flex;
+width: 100%;
+position: fixed;
+left: 0px;
+top: 570px;
+background-color: #fff;
+height: 60px;
+justify-content: space-evenly;
+border-top: 1px solid black;
+}
+.new_profil_downcontent div{
+    display: flex;
+
 @media all and (max-width: 1550px) {
   .follow__text {
     font-size: 20px;
@@ -307,9 +379,11 @@ input::placeholder {
   .profile__logo_wrapper {
     width: 15%;
   }
+
   .profile__info_content{
     margin-left: 80px;
   }
+
 }
 @media all and (max-width: 1000px) {
   .nav__title {
@@ -444,6 +518,19 @@ input::placeholder {
   .navbar_600 img{
     height: 35px;
   }
+@media (max-width:322px){
+    .create_logo{
+        width: 53px;
+    }
+    .new_profil_downcontent{
+        top: 540px;
+    }
+    .logo_links{
+        width: 23px;
+    }
+    .logo_obj{
+        width: 80%;
+    }
 }
 
 
