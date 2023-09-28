@@ -30,7 +30,7 @@ const EditProfile = ({ active, setActive }) => {
 
           <h3 className={style.edit__title}>Edit profile</h3>
           
-          {currentAccount && (
+          {currentAccount ? (
             <div className={style.edit__fields}>
               <div className={style.edit__logo}>
                 <h4 className={style.edit__field_title}>Profile logo</h4>
@@ -44,6 +44,44 @@ const EditProfile = ({ active, setActive }) => {
                 <h4 className={style.edit__field_title}>Profile name</h4>
                 <div className={style.name__wrapper}>
                   <input maxLength={30} placeholder='Enter your new username' className={style.name__input} type="text" value={profile.name} onChange={(e) => setProfile({ ...profile, name: e.target.value, })} />
+                  <p className={style.name__subtitle}>Usernames can only contain letters, numbers, underscores, and periods. Changing your username will also change your profile link.</p>
+                </div>
+              </div>
+
+              <div className={style.edit__desc}>
+                <h4 className={style.edit__field_title}>Description</h4>
+                {/*<input placeholder='Enter some bio' className={style.desc__input} type="" />*/}
+                <textarea maxLength={260} className={style.desc__textarea} onChange={(e) => setProfile({ ...profile, description: e.target.value})}> </textarea>
+              </div>
+
+              <div className={style.edit__social}>
+                <h4 className={style.edit__field_title}>Instagram</h4>
+                <input className={style.social__input} type="text" />
+              </div>
+              <div className={style.edit__social}>
+                <h4 className={style.edit__field_title}>YouTube</h4>
+                <input className={style.social__input} type="text" />
+              </div>
+
+              <div className={style.btns}>
+                <button className={style.edit__btn} onClick={() => {dispatch(editProfile({ profile })); setActive(false)}}>Edit</button>
+              </div>
+
+            </div>
+          ) : (
+            <div className={style.edit__fields}>
+              <div className={style.edit__logo}>
+                <h4 className={style.edit__field_title}>Profile logo</h4>
+                <input type="file" accept="image/*" onChange={(e) => setProfile({ ...profile, avatar: e.target.files[0] })}/>
+                <div className={style.img__wrapper}>
+                  <img className={style.img} src='' alt="logo" />
+                </div>
+              </div>
+
+              <div className={style.edit__name}>
+                <h4 className={style.edit__field_title}>Profile name</h4>
+                <div className={style.name__wrapper}>
+                  <input maxLength={30} placeholder='Enter your new username' className={style.name__input} type="text" onChange={(e) => setProfile({ ...profile, name: e.target.value, })} />
                   <p className={style.name__subtitle}>Usernames can only contain letters, numbers, underscores, and periods. Changing your username will also change your profile link.</p>
                 </div>
               </div>

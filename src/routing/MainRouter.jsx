@@ -43,9 +43,9 @@ const MainRouter = () => {
       <Route path='/' element={<RecsPage />} />
       <Route path='/following' element={<FollowingPage />} />
       <Route path='/search' element={<SearchPage />} />
-      <Route path='/acount' element={<AcountPage/>}/>
+      {/*<Route path='/acount' element={<AcountPage/>}/>
       <Route path='/video' element={<VideosPage/>} />
-      <Route path='/hashtag' element={<HashtagsPage/>}/>
+      <Route path='/hashtag' element={<HashtagsPage/>}/>*/}
       <Route path='/createVideo' element={<Create/>}/>
       <Route path='/profil' element={<ProfilPages/>}/>
       <Route path='/forgood' element={<ForGoodPage/>}/>

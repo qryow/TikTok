@@ -25,7 +25,7 @@ const Navbar = () => {
   const { isDarkMode, toggleDarkMode } = useDarkMode(); 
   return (
     <>
-      { currentAccount && (
+      { currentAccount ? (
         <div className={isDarkMode ? `${style.navbar} ${style.to__black}` : `${style.navbar}`}>
           <div className={style.container}>
             <div className={style.nav__wrapper}>
@@ -52,9 +52,33 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-      </div>
-    </div> 
-        </div> 
+      ) : (
+        <div className={isDarkMode ? `${style.navbar} ${style.to__black}` : `${style.navbar}`}>
+          <div className={style.container}>
+            <div className={style.nav__wrapper}>
+              <div className={style.logo__wrapper}>
+                <img className={style.logo} src={isDarkMode ? lightLogo : logo} alt="TikTok logo" />
+              </div>
+
+              <div className={style.menu}>
+                <div className={style.search__wrapper} onClick={() => navigate('/search')} >
+                  <img className={style.search} src={isDarkMode ? lightSearch : search} alt="search" onClick={() => navigate('/search')}/>
+                </div>
+                <div className={style.home__wrapper} onClick={() => navigate('/')}>
+                  <img className={style.search} src={isDarkMode ? lightHome : home} alt="add video" />
+                </div>
+                <div className={style.add_video__wrapper} onClick={() => navigate('/create-video')}>
+                  <img className={style.add_video} src={isDarkMode ? lightAdd : add} alt="add video" />
+                </div>
+                <div className={style.profile__wrapper} >
+                <div  onClick={() => setModalActive(true)}>
+                  <img className={style.profile__logo} src='' alt='profile' />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       )}
       <AccountInfoModal active={modalActive} setActive={setModalActive} />
     </>
