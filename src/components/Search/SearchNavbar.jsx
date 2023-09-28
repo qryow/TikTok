@@ -21,6 +21,7 @@ const SearchNavbar = () => {
   const { isDarkMode, toggleDarkMode } = useDarkMode();
 
 
+
   return (
     <>
       <div className={style.navbar}>

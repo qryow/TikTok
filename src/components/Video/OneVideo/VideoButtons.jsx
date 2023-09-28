@@ -3,6 +3,7 @@ import style from '../styles/Video.module.css'
 import Modal from '../VideoDetails'
 import { likePost } from '../../../store/posts/postsActions'
 import { useDispatch } from 'react-redux'
+
 import { useDarkMode } from '../../DarkMode/DarkMode'
 import like from '../../../img/Like.svg'
 import likeRed from '../../../img/LikeRed.svg'
@@ -27,6 +28,8 @@ const VideoButtons = ({ post }) => {
 
   const dispatch = useDispatch()
 
+  const dispatch = useDispatch()
+
   const handleLikeClick = () => {
     setLiked(!liked);
   };
@@ -38,6 +41,7 @@ const VideoButtons = ({ post }) => {
     <>
       <div className={style.btns__wrapper}>
         <div className={style.btn__wrapper}>
+
           <img className={style.like} onClick={() => {handleLikeClick(); dispatch(likePost(post.id)) }} src={post.likes.some(like => like.like) ? likeRed : (isDarkMode ? lighterLike : like)} alt="like" />
           <p className={isDarkMode ? `${style.like__text} ${style.like__text_lighter}` : `${style.like__text}`}> {post.likes.filter(like => like.like).length} </p>
         </div>

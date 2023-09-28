@@ -14,6 +14,7 @@ const ProfileLikes = () => {
   const { currentAccount } = useSelector(state => state.account)
   const { posts } = useSelector(state => state.posts)
   console.log(posts);
+
   const { isDarkMode, toggleDarkMode } = useDarkMode(); 
 
   let likedPosts = [];
@@ -83,12 +84,7 @@ const ProfileLikes = () => {
               Likes
             </NavLink>
           </div>
-
-          <div className={style.liked__videos}>
-            
-          </div>
-
-          
+          <div className={style.liked__videos}></div>
         </div>
       </div>
       <EditProfile active={modalActive} setActive={setModalActive} />
