@@ -32,6 +32,7 @@ input::placeholder {
 
 .edit__profile__btn_lighter{
   border: 1px solid white;
+  color: white;
 }
 
 .profile__wrapper {
@@ -87,6 +88,10 @@ input::placeholder {
 .profile__name {
   font-family: "Proxima-Nova_bold";
   font-size: 40px;
+}
+
+.profile__name_lighter{
+  color: white;
 }
 
 .subscriptions {

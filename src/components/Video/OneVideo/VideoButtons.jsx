@@ -16,6 +16,7 @@ import share from '../../../img/Share.svg'
 import lighterLike from '../../../image/lighterLike.svg';
 import lighterComment from '../../../image/lighterMasseg.svg';
 import lighterFavorite from '../../../image/lighterFavorite.svg';
+import lighterRepost from '../../../image/lighterRepost.svg';
 import lighterShare from '../../../image/lighterShare.svg';
 
 const VideoButtons = ({ post }) => {
@@ -47,13 +48,13 @@ const VideoButtons = ({ post }) => {
           <img className={style.comment} src={isDarkMode ? lighterComment : comment} alt="comment" onClick={() => {setModalActive(true); setIsPlaying(true)}} />
         </div>
         <div className={style.btn__wrapper}>
-          <img className={style.favorite} onClick={handleFavoriteClick} src={favorited ? favoriteYellow : favorite} alt="repost" />
+          <img className={style.favorite} onClick={handleFavoriteClick} src={isDarkMode ? (favorited ? lighterFavorite : favoriteYellow) : favorite} alt="repost" />
         </div>
         <div className={style.btn__wrapper}>
-          <img className={style.repost} src={isDarkMode ? lighterShare : repost} alt="repost" />
+          <img className={style.repost} src={isDarkMode ? lighterRepost : repost} alt="repost" />
         </div>
         <div className={style.btn__wrapper}>
-          <img className={style.share} src={share} alt="share" />
+          <img className={style.share} src={isDarkMode ? lighterShare : share} alt="share" />
         </div>
       </div>
       <Modal active={modalActive} setActive={setModalActive} post={post} isPlaying={isPlaying} setIsPlaying={setIsPlaying} />

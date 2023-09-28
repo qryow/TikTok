@@ -5,7 +5,6 @@ import ProfileNavbar from './ProfileNavbar'
 import Subscriptions from '../UI/subscriptions/SubscriptionsList'
 import EditProfile from './EditProfile';
 import { useSelector } from 'react-redux';
-import logo from '../../img/LogoLight.svg'
 import PremiumIcon from '../Premium/PremiumIcon';
 import { useDarkMode } from '../DarkMode/DarkMode';
 
@@ -20,11 +19,8 @@ const Profile = () => {
       <Subscriptions />
       <div className={isDarkMode ? `${style.profile__wrapper} ${style.profile__black}` : `${style.profile__wrapper}`}>
         <div className={style.profile__content}>
-          <div className={style.navbar_600}>
-            <img src={logo} alt="" />
-          </div>
 
-          { currentAccount ? (
+          { currentAccount && (
             <div className={style.profile__info}>
               <div className={style.profile__logo_wrapper}>
                 <img className={style.profile__logo} src={ currentAccount.avatar} alt="profile logo" />
@@ -49,37 +45,6 @@ const Profile = () => {
                 </div>
 
                 <p className={style.profile__desc}> {currentAccount.description} </p>
-              </div>
-
-              <div className={style.btn__wrapper}>
-                <button className={isDarkMode ? `${style.edit__profile__btn} ${style.edit__profile__btn_lighter}` : `${style.edit__profile__btn}`} onClick={() => setModalActive(true)}>Edit profile</button>
-              </div>
-            </div>
-          ) : (
-            <div className={style.profile__info}>
-              <div className={style.profile__logo_wrapper}>
-                <img className={style.profile__logo} src='' alt="profile logo" />
-              </div>
-
-              <div className={style.profile__info_content}>
-                <div className={style.premiumIcon}>
-                <h4 className={style.profile__name}></h4>
-                <PremiumIcon />
-                </div>
-                
-                <div className={style.subscriptions}>
-                  <div className={style.following}>
-                    <p className={style.follow__text}> <span className={style.count}>100</span> following</p>
-                  </div>
-                  <div className={style.following}>
-                    <p className={style.follow__text}> <span className={style.count}>100</span> followers</p>
-                  </div>
-                  <div className={style.following}>
-                    <p className={style.follow__text}> <span className={style.count}>100</span> posts</p>
-                  </div>
-                </div>
-
-                <p className={style.profile__desc}></p>
               </div>
 
               <div className={style.btn__wrapper}>
