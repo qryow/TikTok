@@ -28,8 +28,6 @@ const VideoButtons = ({ post }) => {
 
   const dispatch = useDispatch()
 
-  const dispatch = useDispatch()
-
   const handleLikeClick = () => {
     setLiked(!liked);
   };
