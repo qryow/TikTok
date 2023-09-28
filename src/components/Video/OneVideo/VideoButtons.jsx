@@ -48,7 +48,7 @@ const VideoButtons = ({ post }) => {
           <img className={style.comment} src={isDarkMode ? lighterComment : comment} alt="comment" onClick={() => {setModalActive(true); setIsPlaying(true)}} />
         </div>
         <div className={style.btn__wrapper}>
-          <img className={style.favorite} onClick={handleFavoriteClick} src={isDarkMode ? (favorited ? lighterFavorite : favoriteYellow) : favorite} alt="repost" />
+          <img className={style.favorite} onClick={handleFavoriteClick} src={favorited ? favoriteYellow : (isDarkMode ? lighterFavorite : favorite)} alt="repost" />
         </div>
         <div className={style.btn__wrapper}>
           <img className={style.repost} src={isDarkMode ? lighterRepost : repost} alt="repost" />

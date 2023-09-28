@@ -8,7 +8,7 @@ import search from '../../img/Search.svg'
 import add from '../../img/AddVideo.svg'
 import home from '../../img/HomeIcon.svg'
 import { useSelector } from 'react-redux'
-import { useDarkMode } from '../DarkMode/DarkMode'; 
+import { useDarkMode } from '../DarkMode/DarkMode'
 
 import lightLogo from '../../image/lightLogo.svg';
 import lightSearch from '../../image/LightSearch.svg';

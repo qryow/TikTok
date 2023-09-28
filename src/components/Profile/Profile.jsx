@@ -8,6 +8,8 @@ import { useSelector } from 'react-redux';
 import PremiumIcon from '../Premium/PremiumIcon';
 import { useDarkMode } from '../DarkMode/DarkMode';
 
+import lightLogo from '../../image/lightLogo.svg';
+
 const Profile = () => {
   const [modalActive, setModalActive] = useState(false)
   const { currentAccount } = useSelector(state => state.account)
