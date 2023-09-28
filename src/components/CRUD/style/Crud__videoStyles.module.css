@@ -147,6 +147,9 @@
     .create_vid{
         font-size: 50px;
     }
+    .input__wrapper{
+        width: 40%;
+    }
 }
 @media all and (max-width:980px){
     .logo{
@@ -161,6 +164,18 @@
     }
     .video__platform{
         width: 50%;
+    }
+    .input__wrapper{
+        width: 40%;
+    }
+    .menu{
+        width: 20%;
+    }
+    .home__wrapper{
+        height: 70%;
+    }
+    .profile__wrapper{
+        height: 70%;
     }
 }
 @media all and (max-width:830px){
@@ -212,5 +227,15 @@
     .create_btn{
         position: relative;
         top: 230px;
+    }
+    .input__wrapper{
+        margin-top: 90px;
+        width: 80%;
+    }
+    .create_vid{
+        display: none;
+    }
+    .menu{
+        width: 30%;
     }
 }

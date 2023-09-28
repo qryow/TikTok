@@ -151,9 +151,48 @@
   .search {
     display: none;
   }
+  .logo__wrapper{
+    width: 20%;
+  }
+  .menu{
+    width: 20%;
+  }
+  .home__wrapper{
+    height: 50%;
+  }
+  .profile__wrapper{
+    height: 50%;
+  }
 }
 @media all and (max-width: 900px) {
   .search__block {
     margin-top: 22vh;
   }
 }
+@media all and (max-width: 600px) {
+  .search__block {
+    margin-top: 15vh;
+    width: 100%;
+  }
+}
+
+@media (max-width:440px){
+  .menu{
+    width: 30%;
+  }
+  .navigation{
+    width: 70%;
+    margin-left: 40px;
+  }
+}
+@media (max-width:370px){
+  .navigation{
+    width: 70%;
+    margin-left: 20px;
+  }
+  .nav__title{
+    margin-left: 20px;
+  }
+}
+
+

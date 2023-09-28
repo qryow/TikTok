@@ -25,6 +25,7 @@ import ProfileReposts from '../components/Profile/ProfileReposts'
 import ProfileLikes from '../components/Profile/ProfileLikes'
 import Opasiti from '../components/opasiti sites/Opasiti'
 import Safery from '../components/safery/Safery'
+import Accessibility from '../components/accessibility/Accessibility'
 
 const MainRouter = () => {
   return (
@@ -54,6 +55,7 @@ const MainRouter = () => {
 
       <Route path='/opasiti' element={<Opasiti/>}/>
       <Route path='/safury' element={<Safery/>} />
+      <Route path='/accessibility' element={<Accessibility/>}/>
     </Routes>
   )
 }

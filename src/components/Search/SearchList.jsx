@@ -7,7 +7,6 @@ const SearchList = () => {
     <>
       <div className={style.search_list__wrapper}>
         <div className={style.search__block}>
-
           <div className={style.navigation}>
             <NavLink className={style.nav__title} to="/search">
               Videos
@@ -19,7 +18,6 @@ const SearchList = () => {
               Hastags
             </NavLink>
           </div>
-
         </div>
       </div>
     </>

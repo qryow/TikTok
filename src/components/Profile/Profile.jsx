@@ -5,7 +5,7 @@ import ProfileNavbar from './ProfileNavbar'
 import Subscriptions from '../UI/subscriptions/SubscriptionsList'
 import EditProfile from './EditProfile';
 import { useSelector } from 'react-redux';
-
+import logo from '../../img/LogoLight.svg'
 const Profile = () => {
   const [modalActive, setModalActive] = useState(false)
   const { currentAccount } = useSelector(state => state.account)
@@ -16,7 +16,9 @@ const Profile = () => {
       <Subscriptions />
       <div className={style.profile__wrapper}>
         <div className={style.profile__content}>
-
+          <div className={style.navbar_600}>
+            <img src={logo} alt="" />
+          </div>
 
           { currentAccount && (
             <div className={style.profile__info}>

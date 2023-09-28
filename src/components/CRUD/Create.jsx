@@ -8,6 +8,7 @@ import style from '../CRUD/style/Crud__videoStyles.module.css';
 import logo from '../../img/LogoLight.svg';
 import profile from '../../img/Profile.svg';
 import home from '../../img/HomeIcon.svg'
+import Footer from '../Info/Footer';
 
 const Create = () => {
   const [post, setPost] = useState({
