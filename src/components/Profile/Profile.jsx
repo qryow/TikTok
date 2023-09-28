@@ -5,16 +5,19 @@ import ProfileNavbar from './ProfileNavbar'
 import Subscriptions from '../UI/subscriptions/SubscriptionsList'
 import EditProfile from './EditProfile';
 import { useSelector } from 'react-redux';
+import PremiumIcon from '../Premium/PremiumIcon';
+import { useDarkMode } from '../DarkMode/DarkMode';
 
 const Profile = () => {
   const [modalActive, setModalActive] = useState(false)
   const { currentAccount } = useSelector(state => state.account)
+  const { isDarkMode, toggleDarkMode } = useDarkMode();
 
   return (
     <>
       <ProfileNavbar />
       <Subscriptions />
-      <div className={style.profile__wrapper}>
+      <div className={isDarkMode ? `${style.profile__wrapper} ${style.profile__black}` : `${style.profile__wrapper}`}>
         <div className={style.profile__content}>
 
 
@@ -25,7 +28,10 @@ const Profile = () => {
               </div>
 
               <div className={style.profile__info_content}>
+                <div className={style.premiumIcon}>
                 <h4 className={style.profile__name}> { currentAccount.name } </h4>
+                <PremiumIcon />
+                </div>
                 
                 <div className={style.subscriptions}>
                   <div className={style.following}>
@@ -43,13 +49,13 @@ const Profile = () => {
               </div>
 
               <div className={style.btn__wrapper}>
-                <button className={style.edit__profile__btn} onClick={() => setModalActive(true)}>Edit profile</button>
+                <button className={isDarkMode ? `${style.edit__profile__btn} ${style.edit__profile__btn_lighter}` : `${style.edit__profile__btn}`} onClick={() => setModalActive(true)}>Edit profile</button>
               </div>
             </div>
           )}
 
           <div className={style.navigation}>
-            <NavLink className={style.nav__title} to="/profile">
+            <NavLink className={isDarkMode ? `${style.nav__title} ${style.nav__title_lighter}` : `${style.nav__title}`} to="/profile">
               Videos
             </NavLink>
             <NavLink className={style.nav__title} to="/profile-favorites">

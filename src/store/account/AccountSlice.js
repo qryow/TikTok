@@ -2,10 +2,12 @@ import { createSlice } from "@reduxjs/toolkit";
 import { registerUser, accountActivate, loginUser, changePassword, deleteAccount, forgotPassword, forgotPasswordComplete, getProfile, accountLogout } from './AccountAction';
 import { addDataToLocalStorage, addEmailToLocalStorage } from "../../helpers/functions";
 
+
 const accountSlice = createSlice({
     name: 'account',
     initialState: {
         currentAccount: null,
+        premiumStatus: localStorage.getItem('premiumStatus') === 'true',
         status: ''
     },
     reducers: {
@@ -14,7 +16,11 @@ const accountSlice = createSlice({
         },
         clearStatus: (state) => {
             state.status = '';
-        }
+        },
+        setPremiumStatus: (state, action) => {
+          state.premiumStatus = action.payload;
+          localStorage.setItem('premiumStatus', action.payload ? 'true' : 'false');
+        },
     },
     extraReducers: (builder) => {
         builder
@@ -76,5 +82,5 @@ const accountSlice = createSlice({
     }
 });
 
-export const { clearCurrentAccount, clearStatus } = accountSlice.actions;
+export const { clearCurrentAccount, clearStatus, setPremiumStatus } = accountSlice.actions;
 export default accountSlice.reducer;

@@ -49,8 +49,8 @@ useEffect(() => {
 
 return (
         <div className={style.InfoTop}>
-        <div className={style.backtop}>
-            <img src={caret} alt="" /><h1>Develop for <span>{text}<span>_</span></span></h1>
+            <div className={style.backtop}>
+                <img src={caret} alt="" /><h1>Develop for <span>{text}<span>_</span></span></h1>
             </div>
         </div>
     );
