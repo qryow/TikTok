@@ -38,6 +38,16 @@ const AccountRegister = () => {
         </div>
       </div>
 
+      {status === 'error' ? (
+        <>
+          <div className={style.error}>
+            <h3 className={style.error__text}>Some error occured!   </h3>
+            <br />
+            <button className={style.error__btn} onClick={() => dispatch(clearStatus())}>Try again</button>
+          </div>
+        </>
+      ) : (
+
       <div className={style.inputs}>
         <div className={style.navigation}>
           <NavLink className={style.nav__title} to="/register">
@@ -58,6 +68,9 @@ const AccountRegister = () => {
         </div>
 
       </div>
+
+      )}
+
     </div>
     );
 };

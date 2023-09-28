@@ -11,19 +11,17 @@ const ProfileLikes = () => {
   const [modalActive, setModalActive] = useState(false)
   const { currentAccount } = useSelector(state => state.account)
   const { posts } = useSelector(state => state.posts)
-  console.log(posts);
+  console.log(posts.results);
 
- // Объявите переменную за пределами блока if
+  //let likedPosts = posts.results.filter((post) => post.likes && post.likes.some((like) => like.like === true));
+  //console.log(likedPosts);
 
- let likedPosts = [];
+  let likedPosts = [];
+  if (Array.isArray(posts.results)) {
+    likedPosts = posts.results.filter((post) => post.likes && post.likes.some((like) => like.like === true));
+  }
+  console.log(likedPosts);
 
- if (Array.isArray(posts)) {
-   likedPosts = posts.filter((post) => post.likes && post.likes.some((like) => like.like === true));
- }
- 
- console.log(likedPosts);
- 
- 
   const dispatch = useDispatch();
   
   useEffect(() => {
@@ -83,7 +81,9 @@ const ProfileLikes = () => {
             </NavLink>
           </div>
 
-          <p></p>
+          <div className={style.liked__videos}>
+            
+          </div>
 
           
         </div>

@@ -68,8 +68,8 @@ const Video = ({ post }) => {
 
   return (
     <div className={style.video__item}
-    //onMouseEnter={handleMouseEnter}
-    //onMouseLeave={handleMouseLeave}
+    onMouseEnter={handleMouseEnter}
+    onMouseLeave={handleMouseLeave}
     >
       {isPlaying ? (
         <div className={style.video__wrapper}>

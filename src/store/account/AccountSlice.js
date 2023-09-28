@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { registerUser, accountActivate, loginUser, changePassword, deleteAccount, forgotPassword, forgotPasswordComplete, getProfile, accountLogout } from './AccountAction';
-import { addDataToLocalStorage } from "../../helpers/functions";
+import { addDataToLocalStorage, addEmailToLocalStorage } from "../../helpers/functions";
 
 const accountSlice = createSlice({
     name: 'account',
@@ -18,8 +18,10 @@ const accountSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder
-        .addCase(registerUser.fulfilled, (_, action) => {
+        .addCase(registerUser.fulfilled, (state, action) => {
             action.payload.navigate('/activate');
+            state.currentAccount = action.payload.userEmail;
+            addEmailToLocalStorage(action.payload.userEmail, action.payload.data);
         })
         .addCase(registerUser.rejected, (state) => {
             state.status = 'error';
