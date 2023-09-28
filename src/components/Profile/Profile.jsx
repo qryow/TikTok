@@ -5,6 +5,7 @@ import ProfileNavbar from './ProfileNavbar'
 import Subscriptions from '../UI/subscriptions/SubscriptionsList'
 import EditProfile from './EditProfile';
 import { useSelector } from 'react-redux';
+import logo from '../../img/LogoLight.svg'
 import PremiumIcon from '../Premium/PremiumIcon';
 import { useDarkMode } from '../DarkMode/DarkMode';
 
@@ -19,7 +20,9 @@ const Profile = () => {
       <Subscriptions />
       <div className={isDarkMode ? `${style.profile__wrapper} ${style.profile__black}` : `${style.profile__wrapper}`}>
         <div className={style.profile__content}>
-
+          <div className={style.navbar_600}>
+            <img src={logo} alt="" />
+          </div>
 
           { currentAccount && (
             <div className={style.profile__info}>

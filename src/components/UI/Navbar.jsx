@@ -93,7 +93,7 @@ const Navbar = () => {
                 </div>
                 <div className={style.profile__wrapper} >
                   <div  onClick={() => setModalActive(true)}>
-                  <img className={style.profile__logo} src='' alt='profile' />
+                  <img className={style.profile__logo} src={ currentAccount.avatar } alt='profile' />
                   </div>
                 </div>
               </div>

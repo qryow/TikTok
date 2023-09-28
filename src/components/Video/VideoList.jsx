@@ -10,12 +10,12 @@ const VideoList = () => {
   const { currentAccount, loading } = useSelector(state => state.account)
   const { posts } = useSelector(state => state.posts)
   console.log(posts);
+
   const { isDarkMode, toggleDarkMode } = useDarkMode(); 
 
   const dispatch = useDispatch()
 
   //const [visibleIndex, setVisibleIndex] = useState(0);
-  //* после получения всех видео сделать анимацию скролла с помощью индексов 
 
   useEffect(() => {
     dispatch(getPosts());

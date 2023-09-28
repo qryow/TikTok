@@ -10,7 +10,6 @@ const SearchList = () => {
     <>
       <div className={isDarkMode ? `${style.search_list__wrapper} ${style.search_list__wrapper_lighter}` : `${style.search_list__wrapper}`}>
         <div className={style.search__block}>
-
           <div className={style.navigation}>
             <NavLink className={isDarkMode ? `${style.nav__title} ${style.nav__title_lighter}` : `${style.nav__title}`} to="/search">
               Videos
@@ -22,7 +21,6 @@ const SearchList = () => {
               Hastags
             </NavLink>
           </div>
-
         </div>
       </div>
     </>
